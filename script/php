@@ -1,0 +1,15 @@
+#!/bin/sh
+set -e
+cd "`dirname \"$0\"`/.."
+
+./script/generate_language php
+
+cd test/
+
+if [ "$1" == "" ]; then
+  for test in $(ls *.php); do
+    php $test
+  done
+else
+  php $1.php
+fi
