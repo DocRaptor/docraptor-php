@@ -33,7 +33,4 @@ while (true) {
 }
 
 echo $doc_api->downloadIDGet($status_response->getDownloadId());
-
-echo "SHITS DONE!";
-
 ?>
