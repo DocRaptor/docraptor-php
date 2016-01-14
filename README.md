@@ -25,7 +25,7 @@ $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test docu
 $doc = new Doc();
 $doc->setTest(true);                                                   # test documents are free but watermarked
 $doc->setDocumentContent("<html><body>Swagger PHP</body></html>");     # supply content directly
-// $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html"); # or use a url
+# $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html");  # or use a url
 $doc->setName("swagger-php.pdf");                                      # help you find a document later
 $doc->setDocumentType("pdf");                                          # pdf or xls or xlsx
 # $doc->setJavascript(true);                                           # enable JavaScript processing
