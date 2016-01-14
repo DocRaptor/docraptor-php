@@ -1,13 +1,7 @@
 <?php
-require "../client/docraptor/autoload.php";
-require "../client/docraptor/lib/ApiClient.php";
-require "../client/docraptor/lib/docraptor/Doc.php";
-require "../client/docraptor/lib/docraptor/AsyncDoc.php";
-require "../client/docraptor/lib/docraptor/AsyncDocStatus.php";
-require "../client/docraptor/lib/docraptor/ClientApi.php";
+require "../client/autoload.php";
 
 use docraptor\Doc as Doc;
-use docraptor\NewDoc as NewDoc;
 use docraptor\ClientApi as ClientApi;
 
 $doc = new Doc();
@@ -23,5 +17,3 @@ $configuration->setUsername("YOUR_API_KEY_HERE");
 $configuration->setDebug(true);
 
 $doc_api->docsPost($doc);
-
-?>
