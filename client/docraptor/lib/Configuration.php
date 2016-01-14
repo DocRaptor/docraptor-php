@@ -89,7 +89,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://localhost:3000/';
+    protected $host = 'https://docraptor.com/';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

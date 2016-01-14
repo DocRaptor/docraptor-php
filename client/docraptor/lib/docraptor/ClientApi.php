@@ -64,7 +64,7 @@ class ClientApi
     {
         if ($apiClient == null) {
             $apiClient = new ApiClient();
-            $apiClient->getConfig()->setHost('http://localhost:3000/');
+            $apiClient->getConfig()->setHost('https://docraptor.com/');
         }
   
         $this->apiClient = $apiClient;

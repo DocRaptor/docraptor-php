@@ -57,6 +57,7 @@ class Doc implements ArrayAccess
         'document_url' => 'string',
         'test' => 'bool',
         'strict' => 'string',
+        'ignore_resource_errors' => 'bool',
         'tag' => 'string',
         'help' => 'bool',
         'javascript' => 'bool',
@@ -76,6 +77,7 @@ class Doc implements ArrayAccess
         'document_url' => 'document_url',
         'test' => 'test',
         'strict' => 'strict',
+        'ignore_resource_errors' => 'ignore_resource_errors',
         'tag' => 'tag',
         'help' => 'help',
         'javascript' => 'javascript',
@@ -95,6 +97,7 @@ class Doc implements ArrayAccess
         'document_url' => 'setDocumentUrl',
         'test' => 'setTest',
         'strict' => 'setStrict',
+        'ignore_resource_errors' => 'setIgnoreResourceErrors',
         'tag' => 'setTag',
         'help' => 'setHelp',
         'javascript' => 'setJavascript',
@@ -114,6 +117,7 @@ class Doc implements ArrayAccess
         'document_url' => 'getDocumentUrl',
         'test' => 'getTest',
         'strict' => 'getStrict',
+        'ignore_resource_errors' => 'getIgnoreResourceErrors',
         'tag' => 'getTag',
         'help' => 'getHelp',
         'javascript' => 'getJavascript',
@@ -158,6 +162,12 @@ class Doc implements ArrayAccess
       * @var string
       */
     protected $strict;
+    
+    /**
+      * $ignore_resource_errors Failed loading of images/javascripts/stylesheets/etc. will not cause the rendering to stop.
+      * @var bool
+      */
+    protected $ignore_resource_errors;
     
     /**
       * $tag A field for storing a small amount of metadata with this document.
@@ -209,6 +219,7 @@ class Doc implements ArrayAccess
             $this->document_url = $data["document_url"];
             $this->test = $data["test"];
             $this->strict = $data["strict"];
+            $this->ignore_resource_errors = $data["ignore_resource_errors"];
             $this->tag = $data["tag"];
             $this->help = $data["help"];
             $this->javascript = $data["javascript"];
@@ -347,6 +358,27 @@ class Doc implements ArrayAccess
             throw new \InvalidArgumentException("Invalid value for 'strict', must be one of 'none'");
         }
         $this->strict = $strict;
+        return $this;
+    }
+    
+    /**
+     * Gets ignore_resource_errors
+     * @return bool
+     */
+    public function getIgnoreResourceErrors()
+    {
+        return $this->ignore_resource_errors;
+    }
+  
+    /**
+     * Sets ignore_resource_errors
+     * @param bool $ignore_resource_errors Failed loading of images/javascripts/stylesheets/etc. will not cause the rendering to stop.
+     * @return $this
+     */
+    public function setIgnoreResourceErrors($ignore_resource_errors)
+    {
+        
+        $this->ignore_resource_errors = $ignore_resource_errors;
         return $this;
     }
     
