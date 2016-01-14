@@ -58,11 +58,12 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 
 ## Release Process
 
-1. Merge code and run tests
-2. Increment version in code
-3. Update [CHANGELOG.md](CHANGELOG.md)
-4. Push to GitHub
-5. TODO
+1. Merge code
+2. `script/test`
+3. Increment version in code
+4. Update [CHANGELOG.md](CHANGELOG.md)
+5. Push to GitHub
+6. Release TODO
 
 ## Version Policy
 
