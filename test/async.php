@@ -1,5 +1,5 @@
 <?php
-require "../client/autoload.php";
+require "../autoload.php";
 
 use docraptor\Doc as Doc;
 use docraptor\ClientApi as ClientApi;
