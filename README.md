@@ -13,16 +13,13 @@ TODO
 ```php
 require "../client/docraptor/autoload.php";
 
-use docraptor\Doc as Doc;
-use docraptor\ClientApi as ClientApi;
-
-$docraptor = new ClientApi();
+$docraptor = new DocRaptor\ClientApi();
 $api_client = $docraptor->getApiClient();
 $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
 # $configuration->setDebug(true);
 
-$doc = new Doc();
+$doc = new DocRaptor\Doc();
 $doc->setTest(true);                                                   # test documents are free but watermarked
 $doc->setDocumentContent("<html><body>Swagger PHP</body></html>");     # supply content directly
 # $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html");  # or use a url

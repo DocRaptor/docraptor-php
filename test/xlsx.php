@@ -1,16 +1,13 @@
 <?php
 require "../autoload.php";
 
-use docraptor\Doc as Doc;
-use docraptor\ClientApi as ClientApi;
-
-$docraptor = new ClientApi();
+$docraptor = new DocRaptor\ClientApi();
 $api_client = $docraptor->getApiClient();
 $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 // $configuration->setDebug(true);
 
-$doc = new Doc();
+$doc = new DocRaptor\Doc();
 $doc->setName("php-xlsx.xlsx");
 $doc->setTest(true);
 $doc->setDocumentType("xlsx");

@@ -5,7 +5,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DocRaptor
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -31,7 +31,7 @@
  * Do not edit the class manually.
  */
 
-namespace docraptor;
+namespace DocRaptor;
 
 use \ArrayAccess;
 /**
@@ -39,7 +39,7 @@ use \ArrayAccess;
  *
  * @category    Class
  * @description 
- * @package     Swagger\Client
+ * @package     DocRaptor
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link        https://github.com/swagger-api/swagger-codegen
@@ -63,7 +63,7 @@ class Doc implements ArrayAccess
         'javascript' => 'bool',
         'referrer' => 'string',
         'callback_url' => 'string',
-        'prince_options' => '\docraptor\PrinceOptions'
+        'prince_options' => '\DocRaptor\PrinceOptions'
     );
   
     /** 
@@ -201,7 +201,7 @@ class Doc implements ArrayAccess
     
     /**
       * $prince_options 
-      * @var \docraptor\PrinceOptions
+      * @var \DocRaptor\PrinceOptions
       */
     protected $prince_options;
     
@@ -489,7 +489,7 @@ class Doc implements ArrayAccess
     
     /**
      * Gets prince_options
-     * @return \docraptor\PrinceOptions
+     * @return \DocRaptor\PrinceOptions
      */
     public function getPrinceOptions()
     {
@@ -498,7 +498,7 @@ class Doc implements ArrayAccess
   
     /**
      * Sets prince_options
-     * @param \docraptor\PrinceOptions $prince_options 
+     * @param \DocRaptor\PrinceOptions $prince_options 
      * @return $this
      */
     public function setPrinceOptions($prince_options)

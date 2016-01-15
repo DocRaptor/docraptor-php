@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DocRaptor
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -33,16 +33,16 @@
 
 namespace DocRaptor;
 
-use \Swagger\Client\Configuration;
-use \Swagger\Client\ApiClient;
-use \Swagger\Client\ApiException;
-use \Swagger\Client\ObjectSerializer;
+use \DocRaptor\Configuration;
+use \DocRaptor\ApiClient;
+use \DocRaptor\ApiException;
+use \DocRaptor\ObjectSerializer;
 
 /**
  * ClientApi Class Doc Comment
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DocRaptor
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -52,13 +52,13 @@ class ClientApi
 
     /**
      * API Client
-     * @var \Swagger\Client\ApiClient instance of the ApiClient
+     * @var \DocRaptor\ApiClient instance of the ApiClient
      */
     protected $apiClient;
   
     /**
      * Constructor
-     * @param \Swagger\Client\ApiClient|null $apiClient The api client to use
+     * @param \DocRaptor\ApiClient|null $apiClient The api client to use
      */
     function __construct($apiClient = null)
     {
@@ -72,7 +72,7 @@ class ClientApi
   
     /**
      * Get API client
-     * @return \Swagger\Client\ApiClient get the API client
+     * @return \DocRaptor\ApiClient get the API client
      */
     public function getApiClient()
     {
@@ -81,7 +81,7 @@ class ClientApi
   
     /**
      * Set the API client
-     * @param \Swagger\Client\ApiClient $apiClient set the API client
+     * @param \DocRaptor\ApiClient $apiClient set the API client
      * @return ClientApi
      */
     public function setApiClient(ApiClient $apiClient)
@@ -96,9 +96,9 @@ class ClientApi
      *
      * 
      *
-     * @param \docraptor\Doc $doc The document to be created. (required)
-     * @return \docraptor\AsyncDoc
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @param \DocRaptor\Doc $doc The document to be created. (required)
+     * @return \DocRaptor\AsyncDoc
+     * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createAsyncDoc($doc)
     {
@@ -148,19 +148,19 @@ class ClientApi
             list($response, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, $method,
                 $queryParams, $httpBody,
-                $headerParams, '\docraptor\AsyncDoc'
+                $headerParams, '\DocRaptor\AsyncDoc'
             );
             
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\docraptor\AsyncDoc', $httpHeader);
+            return $this->apiClient->getSerializer()->deserialize($response, '\DocRaptor\AsyncDoc', $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\docraptor\AsyncDoc', $e->getResponseHeaders());
+                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocRaptor\AsyncDoc', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -177,9 +177,9 @@ class ClientApi
      *
      * 
      *
-     * @param \docraptor\Doc $doc The document to be created. (required)
+     * @param \DocRaptor\Doc $doc The document to be created. (required)
      * @return \SplFileObject
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDoc($doc)
     {
@@ -260,7 +260,7 @@ class ClientApi
      *
      * @param string $id The download_id returned from status request or a callback. (required)
      * @return \SplFileObject
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDoc($id)
     {
@@ -343,8 +343,8 @@ class ClientApi
      * 
      *
      * @param string $id The status_id returned when creating an asynchronous document. (required)
-     * @return \docraptor\AsyncDocStatus
-     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \DocRaptor\AsyncDocStatus
+     * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDocStatus($id)
     {
@@ -397,19 +397,19 @@ class ClientApi
             list($response, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, $method,
                 $queryParams, $httpBody,
-                $headerParams, '\docraptor\AsyncDocStatus'
+                $headerParams, '\DocRaptor\AsyncDocStatus'
             );
             
             if (!$response) {
                 return null;
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\docraptor\AsyncDocStatus', $httpHeader);
+            return $this->apiClient->getSerializer()->deserialize($response, '\DocRaptor\AsyncDocStatus', $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\docraptor\AsyncDocStatus', $e->getResponseHeaders());
+                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocRaptor\AsyncDocStatus', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }

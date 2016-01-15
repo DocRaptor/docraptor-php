@@ -4,7 +4,7 @@
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DocRaptor
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -32,14 +32,14 @@
  * Do not edit the class manually.
  */
 
-namespace Swagger\Client;
+namespace DocRaptor;
 
 /**
  * Configuration Class Doc Comment
  * PHP version 5
  *
  * @category Class
- * @package  Swagger\Client
+ * @package  DocRaptor
  * @author   http://github.com/swagger-api/swagger-codegen
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
@@ -80,7 +80,7 @@ class Configuration
     /**
      * The default instance of ApiClient
      *
-     * @var \Swagger\Client\ApiClient
+     * @var \DocRaptor\ApiClient
      */
     protected $defaultHeaders = array();
 
@@ -483,7 +483,7 @@ class Configuration
      */
     public static function toDebugReport()
     {
-        $report  = "PHP SDK (Swagger\Client) Debug Report:\n";
+        $report  = "PHP SDK (DocRaptor) Debug Report:\n";
         $report .= "    OS: ".php_uname()."\n";
         $report .= "    PHP Version: ".phpversion()."\n";
         $report .= "    Swagger Spec Version: 0.0.1\n";
