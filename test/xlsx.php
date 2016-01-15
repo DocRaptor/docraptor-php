@@ -4,16 +4,15 @@ require "../autoload.php";
 use docraptor\Doc as Doc;
 use docraptor\ClientApi as ClientApi;
 
-$doc = new Doc();
-$doc->setName("swagger-php.xlsx");
-$doc->setTest(true);
-$doc->setDocumentType("xlsx");
-$doc->setDocumentContent("<html><body><table><tr><td>Swagger PHP</td></tr></table></body></html>");
-
-$doc_api = new ClientApi();
-$api_client = $doc_api->getApiClient();
+$docraptor = new ClientApi();
+$api_client = $docraptor->getApiClient();
 $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE");
-$configuration->setDebug(true);
+// $configuration->setDebug(true);
 
-$doc_api->createDoc($doc);
+$doc = new Doc();
+$doc->setName("php-xlsx.xlsx");
+$doc->setTest(true);
+$doc->setDocumentType("xlsx");
+$doc->setDocumentContent("<html><body><table><tr><td>Hello from PHP</td></tr></table></body></html>");
+$docraptor->createDoc($doc);
