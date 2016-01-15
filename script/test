@@ -2,6 +2,10 @@
 set -e
 cd "`dirname \"$0\"`/.."
 
+# check dependencies
+which php > /dev/null      || (echo "php must be installed"; exit 1)
+which composer > /dev/null || (echo "composer must be installed"; exit 1)
+
 cd test
 
 # runs a test file with PASS/FAIL message
