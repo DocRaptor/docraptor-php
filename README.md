@@ -13,11 +13,10 @@ TODO
 ```php
 require "../client/docraptor/autoload.php";
 
-$docraptor = new DocRaptor\ClientApi();
-$api_client = $docraptor->getApiClient();
-$configuration = $api_client->getConfig();
+$configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
-# $configuration->setDebug(true);
+// $configuration->setDebug(true);
+$docraptor = new DocRaptor\ClientApi();
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);                                                   # test documents are free but watermarked
