@@ -92,7 +92,7 @@ class ClientApi
   
     
     /**
-     * asyncDocsPost
+     * createAsyncDoc
      *
      * 
      *
@@ -100,12 +100,12 @@ class ClientApi
      * @return \docraptor\AsyncDoc
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function asyncDocsPost($doc)
+    public function createAsyncDoc($doc)
     {
         
         // verify the required parameter 'doc' is set
         if ($doc === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $doc when calling asyncDocsPost');
+            throw new \InvalidArgumentException('Missing the required parameter $doc when calling createAsyncDoc');
         }
   
         // parse inputs
@@ -173,7 +173,7 @@ class ClientApi
     }
     
     /**
-     * docsPost
+     * createDoc
      *
      * 
      *
@@ -181,12 +181,12 @@ class ClientApi
      * @return \SplFileObject
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function docsPost($doc)
+    public function createDoc($doc)
     {
         
         // verify the required parameter 'doc' is set
         if ($doc === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $doc when calling docsPost');
+            throw new \InvalidArgumentException('Missing the required parameter $doc when calling createDoc');
         }
   
         // parse inputs
@@ -254,7 +254,7 @@ class ClientApi
     }
     
     /**
-     * downloadIdGet
+     * getAsyncDoc
      *
      * 
      *
@@ -262,12 +262,12 @@ class ClientApi
      * @return \SplFileObject
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function downloadIdGet($id)
+    public function getAsyncDoc($id)
     {
         
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling downloadIdGet');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling getAsyncDoc');
         }
   
         // parse inputs
@@ -338,7 +338,7 @@ class ClientApi
     }
     
     /**
-     * statusIdGet
+     * getAsyncDocStatus
      *
      * 
      *
@@ -346,12 +346,12 @@ class ClientApi
      * @return \docraptor\AsyncDocStatus
      * @throws \Swagger\Client\ApiException on non-2xx response
      */
-    public function statusIdGet($id)
+    public function getAsyncDocStatus($id)
     {
         
         // verify the required parameter 'id' is set
         if ($id === null) {
-            throw new \InvalidArgumentException('Missing the required parameter $id when calling statusIdGet');
+            throw new \InvalidArgumentException('Missing the required parameter $id when calling getAsyncDocStatus');
         }
   
         // parse inputs

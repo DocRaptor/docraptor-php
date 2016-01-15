@@ -16,14 +16,14 @@ $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 $configuration->setDebug(true);
 
-$response = $doc_api->asyncDocsPost($doc);
+$response = $doc_api->createAsyncDoc($doc);
 
 while (true) {
-  $status_response = $doc_api->statusIdGet($response->getStatusId());
+  $status_response = $doc_api->getAsyncDocStatus($response->getStatusId());
   if ($status_response->getStatus() == "completed") {
     break;
   }
   sleep(1);
 }
 
-echo $doc_api->downloadIDGet($status_response->getDownloadId());
+echo $doc_api->getAsyncDoc($status_response->getDownloadId());

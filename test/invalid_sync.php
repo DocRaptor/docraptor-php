@@ -17,7 +17,7 @@ $configuration->setUsername("YOUR_API_KEY_HERE");
 $configuration->setDebug(true);
 
 try {
-  $doc_api->docsPost($doc);
+  $doc_api->createDoc($doc);
 } catch (Swagger\Client\ApiException $exception) {
   exit(0);
 }

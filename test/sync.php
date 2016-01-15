@@ -16,4 +16,4 @@ $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 $configuration->setDebug(true);
 
-$doc_api->docsPost($doc);
+$doc_api->createDoc($doc);

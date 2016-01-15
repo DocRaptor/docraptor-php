@@ -34,7 +34,7 @@ $doc->setDocumentType("pdf");                                          # pdf or 
 # $prince_options->setMedia("screen");                                 # use screen styles instead of print styles
 # $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
 
-$response = $docraptor->docsPost($doc);
+$response = $docraptor->createDoc($doc);
 ```
 
 If your document will take longer than 60 seconds to render to PDF you will need to use our async api which allows up to 10 minutes, check out the [example](example/async.php).

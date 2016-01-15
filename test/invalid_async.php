@@ -16,10 +16,10 @@ $configuration = $api_client->getConfig();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 $configuration->setDebug(true);
 
-$response = $doc_api->asyncDocsPost($doc);
+$response = $doc_api->createAsyncDoc($doc);
 
 for($i=0;$i<30;$i++) {
-  $status_response = $doc_api->statusIdGet($response->getStatusId());
+  $status_response = $doc_api->getAsyncDocStatus($response->getStatusId());
   if ($status_response->getStatus() == "failed") {
     exit(0);
   }
