@@ -60,12 +60,14 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 
 ## Release Process
 
-1. Merge code
-2. `script/test`
-3. Increment version in code
+1. `script/test`
+2. Increment version in code:
+  - `swagger-config.json`
+  - `composer.json`
 4. Update [CHANGELOG.md](CHANGELOG.md)
-5. Push to GitHub
-6. Release TODO
+3. Tag version: `git tag 'v0.0.x' && git push --tags`
+5. Push to GitHub (packagist webhook will update their site)
+6. Verify update on https://packagist.org/packages/docraptor/docraptor
 
 ## Version Policy
 
