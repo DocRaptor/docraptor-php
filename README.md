@@ -6,13 +6,19 @@ This is a PHP package for using [DocRaptor API](http://docraptor.com/documentati
 
 ## Installation
 
-TODO
+Install with composer:
+```
+composer require docraptor/docraptor
+```
+
+And then composer's autoload
+```php
+require_once('vendor/autoload.php');
+```
 
 ## Usage
 
 ```php
-require "../client/docraptor/autoload.php";
-
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
 // $configuration->setDebug(true);
