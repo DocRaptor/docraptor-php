@@ -21,7 +21,7 @@ require_once('vendor/autoload.php');
 ```php
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
-// $configuration->setDebug(true);
+# $configuration->setDebug(true);
 $docraptor = new DocRaptor\ClientApi();
 
 $doc = new DocRaptor\Doc();
