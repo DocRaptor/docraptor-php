@@ -20,7 +20,6 @@ $docraptor = new DocRaptor\ClientApi();
 
 try {
 
-
   $doc = new DocRaptor\Doc();
   $doc->setTest(true);                                                   # test documents are free but watermarked
   $doc->setDocumentContent("<html><body>Hello World</body></html>");     # supply content directly
@@ -40,8 +39,8 @@ try {
     switch ($status_response->getStatus()) {
       case "completed":
         $doc_response = $docraptor->getAsyncDoc($status_response->getDownloadId());
-        rename($doc_response->getPathname(), "/tmp/docraptor-sync.pdf");
-        echo "Wrote PDF to /tmp/docraptor-sync.pdf\n";
+        rename($doc_response->getPathname(), "/tmp/docraptor-php.pdf");
+        echo "Wrote PDF to /tmp/docraptor-php.pdf\n";
         exit;
       case "failed":
         echo "FALIED\n";
@@ -51,7 +50,6 @@ try {
         sleep(1);
     }
   }
-
 
 } catch (DocRaptor\ApiException $exception) {
   echo $exception . "\n";

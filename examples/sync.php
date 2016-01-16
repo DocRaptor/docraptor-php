@@ -34,12 +34,12 @@ try {
   # $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
   $create_response = $docraptor->createDoc($doc);
 
-  rename($create_response->getPathname(), "/tmp/docraptor-sync.pdf");
-  echo "Wrote PDF to /tmp/docraptor-sync.pdf\n";
+  rename($create_response->getPathname(), "/tmp/docraptor-php.pdf");
+  echo "Wrote PDF to /tmp/docraptor-php.pdf\n";
 
-} catch (DocRaptor\ApiException $exception) {
-  echo $exception . "\n";
-  echo $exception->getMessage() . "\n";
-  echo $exception->getCode() . "\n";
-  echo $exception->getResponseBody() . "\n";
+} catch (DocRaptor\ApiException $error) {
+  echo $error . "\n";
+  echo $error->getMessage() . "\n";
+  echo $error->getCode() . "\n";
+  echo $error->getResponseBody() . "\n";
 }

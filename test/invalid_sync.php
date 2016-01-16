@@ -14,7 +14,7 @@ $doc->setDocumentContent("<html><body>Hello from PHP</body></html>");
 
 try {
   $docraptor->createDoc($doc);
-} catch (DocRaptor\ApiException $exception) {
+} catch (DocRaptor\ApiException $error) {
   exit(0);
 }
 echo "Exception expected, but not raised";
