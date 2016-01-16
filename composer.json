@@ -10,7 +10,7 @@
         "xlsx",
         "html"
     ],
-    "homepage": "https://docraptor.com",
+    "homepage": "https://github.com/docraptor/docraptor-php",
     "license": "Apache v2",
     "authors": [
         {
