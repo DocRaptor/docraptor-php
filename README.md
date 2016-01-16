@@ -18,6 +18,8 @@ require_once('vendor/autoload.php');
 
 ## Usage
 
+See [examples](examples/) for runnable examples with file output, error handling, etc.
+
 ```php
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
@@ -26,9 +28,9 @@ $docraptor = new DocRaptor\ClientApi();
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);                                                   # test documents are free but watermarked
-$doc->setDocumentContent("<html><body>Swagger PHP</body></html>");     # supply content directly
+$doc->setDocumentContent("<html><body>Hello World</body></html>");     # supply content directly
 # $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html");  # or use a url
-$doc->setName("swagger-php.pdf");                                      # help you find a document later
+$doc->setName("docraptor-php.pdf");                                    # help you find a document later
 $doc->setDocumentType("pdf");                                          # pdf or xls or xlsx
 # $doc->setJavascript(true);                                           # enable JavaScript processing
 # $prince_optinos = new PrinceOptions();
@@ -39,7 +41,7 @@ $doc->setDocumentType("pdf");                                          # pdf or 
 $response = $docraptor->createDoc($doc);
 ```
 
-If your document will take longer than 60 seconds to render to PDF you will need to use our async api which allows up to 10 minutes, check out the [example](example/async.php).
+Docs created like this are limited to 60 seconds to render, check out the [async example](examples/async.php) which allows 10 minutes.
 
 
 We have guides for doing some of the common things:

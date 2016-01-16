@@ -21,4 +21,4 @@ while (true) {
   sleep(1);
 }
 
-echo $docraptor->getAsyncDoc($status_response->getDownloadId());
+$docraptor->getAsyncDoc($status_response->getDownloadId());
