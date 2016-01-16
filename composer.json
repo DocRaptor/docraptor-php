@@ -1,19 +1,21 @@
 {
     "name": "docraptor/docraptor",
     "version": "0.0.1",
-    "description": "",
+    "description": "A wrapper for the DocRaptor HTML to PDF/XLS service.",
     "keywords": [
-        "swagger",
-        "php",
-        "sdk",
-        "api"
+        "docraptor",
+        "api",
+        "pdf",
+        "xls",
+        "xlsx",
+        "html"
     ],
-    "homepage": "http://swagger.io",
+    "homepage": "https://docraptor.com",
     "license": "Apache v2",
     "authors": [
         {
-            "name": "Swagger and contributors",
-            "homepage": "https://github.com/swagger-api/swagger-codegen"
+            "name": "Elijah Miller",
+            "homepage": "https://github.com/jqr"
         }
     ],
     "require": {
