@@ -33,7 +33,8 @@ try {
   # $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
   $create_response = $docraptor->createAsyncDoc($doc);
 
-  while (true) {
+  $done = false;
+  while (!$done) {
     $status_response = $docraptor->getAsyncDocStatus($create_response->getStatusId());
     echo "doc status: " . $status_response->getStatus() . "\n";
     switch ($status_response->getStatus()) {
@@ -41,11 +42,13 @@ try {
         $doc_response = $docraptor->getAsyncDoc($status_response->getDownloadId());
         rename($doc_response->getPathname(), "/tmp/docraptor-php.pdf");
         echo "Wrote PDF to /tmp/docraptor-php.pdf\n";
-        exit;
+        $done = true;
+        break;
       case "failed":
         echo "FALIED\n";
         echo $status_response;
-        exit(1);
+        $done = true;
+        break;
       default:
         sleep(1);
     }
