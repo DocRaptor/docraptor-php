@@ -66,8 +66,8 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 2. Increment version in code:
   - `swagger-config.json`
   - `composer.json`
-4. Update [CHANGELOG.md](CHANGELOG.md)
-3. Tag version: `git tag 'v0.0.x' && git push --tags`
+3. Update [CHANGELOG.md](CHANGELOG.md)
+4. Tag version: `git tag 'v0.0.x' && git push --tags`
 5. Push to GitHub (packagist webhook will update their site)
 6. Verify update on https://packagist.org/packages/docraptor/docraptor
 
