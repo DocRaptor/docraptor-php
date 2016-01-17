@@ -16,6 +16,16 @@ And then composer's autoload
 require_once('vendor/autoload.php');
 ```
 
+## Manual Installation
+
+If you do not wish to use Composer, you can download the [latest
+release](https://github.com/docraptor/docraptor-php/releases), unzip in your project and require the `autoload.php`.
+
+
+```php
+require_once('/path/to/docraptor-php/autoload.php');
+```
+
 ## Usage
 
 See [examples](examples/) for runnable examples with file output, error handling, etc.
