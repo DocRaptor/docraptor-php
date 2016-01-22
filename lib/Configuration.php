@@ -11,7 +11,7 @@
  */
 
 /**
- *  Copyright 2015 SmartBear Software
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -64,6 +64,13 @@ class Configuration
     protected $apiKeyPrefixes = array();
 
     /**
+     * Access token for OAuth
+     *
+     * @var string
+     */
+    protected $accessToken = '';
+
+    /**
      * Username for HTTP basic authentication
      *
      * @var string
@@ -103,7 +110,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = "PHP-Swagger/0.0.1";
+    protected $userAgent = "PHP-Swagger/0.0.2";
 
     /**
      * Debug switch (default set to false)
@@ -193,6 +200,29 @@ class Configuration
     public function getApiKeyPrefix($apiKeyIdentifier)
     {
         return isset($this->apiKeyPrefixes[$apiKeyIdentifier]) ? $this->apiKeyPrefixes[$apiKeyIdentifier] : null;
+    }
+
+    /**
+     * Sets the access token for OAuth
+     *
+     * @param string $accessToken Token for OAuth
+     *
+     * @return Configuration
+     */
+    public function setAccessToken($accessToken)
+    {
+        $this->accessToken = $accessToken;
+        return $this;
+    }
+
+    /**
+     * Gets the access token for OAuth
+     *
+     * @return string Access token for OAuth
+     */
+    public function getAccessToken()
+    {
+        return $this->accessToken;
     }
 
     /**
@@ -486,8 +516,8 @@ class Configuration
         $report  = "PHP SDK (DocRaptor) Debug Report:\n";
         $report .= "    OS: ".php_uname()."\n";
         $report .= "    PHP Version: ".phpversion()."\n";
-        $report .= "    Swagger Spec Version: 0.0.1\n";
-        $report .= "    SDK Package Version: 0.0.1\n";
+        $report .= "    OpenAPI Spec Version: 0.0.1\n";
+        $report .= "    SDK Package Version: 0.0.2\n";
         $report .= "    Temp Folder Path: ".self::getDefaultConfiguration()->getTempFolderPath()."\n";
 
         return $report;

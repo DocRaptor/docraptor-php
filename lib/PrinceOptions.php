@@ -11,7 +11,7 @@
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2015 SmartBear Software
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -235,7 +235,7 @@ class PrinceOptions implements ArrayAccess
       * $media Specify the CSS media type. Defaults to \"print\" but you may want to use \"screen\" for web styles.
       * @var string
       */
-    protected $media;
+    protected $media = 'print';
     
     /**
       * $no_author_style Ignore author stylesheets.
@@ -319,7 +319,7 @@ class PrinceOptions implements ArrayAccess
       * $input Specify the input format.
       * @var string
       */
-    protected $input;
+    protected $input = 'html';
     
     /**
       * $version Specify a specific verison of PrinceXML to use.
@@ -1001,9 +1001,9 @@ class PrinceOptions implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) {
-            return json_encode(get_object_vars($this), JSON_PRETTY_PRINT);
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         } else {
-            return json_encode(get_object_vars($this));
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this));
         }
     }
 }

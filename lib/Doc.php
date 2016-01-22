@@ -11,7 +11,7 @@
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2015 SmartBear Software
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -155,19 +155,19 @@ class Doc implements ArrayAccess
       * $test Enable test mode for this document. Test documents are not charged for but include a watermark.
       * @var bool
       */
-    protected $test;
+    protected $test = true;
     
     /**
       * $strict Force strict HTML validation.
       * @var string
       */
-    protected $strict;
+    protected $strict = 'none';
     
     /**
       * $ignore_resource_errors Failed loading of images/javascripts/stylesheets/etc. will not cause the rendering to stop.
       * @var bool
       */
-    protected $ignore_resource_errors;
+    protected $ignore_resource_errors = true;
     
     /**
       * $tag A field for storing a small amount of metadata with this document.
@@ -179,13 +179,13 @@ class Doc implements ArrayAccess
       * $help Request support help with this request if it succeeds.
       * @var bool
       */
-    protected $help;
+    protected $help = false;
     
     /**
       * $javascript Enable DocRaptor JavaScript parsing. PrinceXML JavaScript parsing is also available elsewhere.
       * @var bool
       */
-    protected $javascript;
+    protected $javascript = false;
     
     /**
       * $referrer Set HTTP referrer when generating this document.
@@ -556,9 +556,9 @@ class Doc implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) {
-            return json_encode(get_object_vars($this), JSON_PRETTY_PRINT);
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         } else {
-            return json_encode(get_object_vars($this));
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this));
         }
     }
 }

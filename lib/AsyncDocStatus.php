@@ -11,7 +11,7 @@
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2015 SmartBear Software
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -326,9 +326,9 @@ class AsyncDocStatus implements ArrayAccess
     public function __toString()
     {
         if (defined('JSON_PRETTY_PRINT')) {
-            return json_encode(get_object_vars($this), JSON_PRETTY_PRINT);
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this), JSON_PRETTY_PRINT);
         } else {
-            return json_encode(get_object_vars($this));
+            return json_encode(\DocRaptor\ObjectSerializer::sanitizeForSerialization($this));
         }
     }
 }

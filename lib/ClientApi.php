@@ -10,7 +10,7 @@
  * @link     https://github.com/swagger-api/swagger-codegen
  */
 /**
- *  Copyright 2015 SmartBear Software
+ *  Copyright 2016 SmartBear Software
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -102,6 +102,22 @@ class ClientApi
      */
     public function createAsyncDoc($doc)
     {
+        list($response, $statusCode, $httpHeader) = $this->createAsyncDocWithHttpInfo ($doc);
+        return $response; 
+    }
+
+
+    /**
+     * createAsyncDocWithHttpInfo
+     *
+     * 
+     *
+     * @param \DocRaptor\Doc $doc The document to be created. (required)
+     * @return Array of \DocRaptor\AsyncDoc, HTTP status code, HTTP response headers (array of strings)
+     * @throws \DocRaptor\ApiException on non-2xx response
+     */
+    public function createAsyncDocWithHttpInfo($doc)
+    {
         
         // verify the required parameter 'doc' is set
         if ($doc === null) {
@@ -110,8 +126,6 @@ class ClientApi
   
         // parse inputs
         $resourcePath = "/async_docs";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "POST";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -125,6 +139,9 @@ class ClientApi
         
         
         
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
         
         // body params
         $_tempBody = null;
@@ -135,41 +152,39 @@ class ClientApi
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
         
-        $headerParams['Authorization'] = 'Basic '.base64_encode($this->apiClient->getConfig()->getUsername().":".$this->apiClient->getConfig()->getPassword());
-        
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
         
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
                 $queryParams, $httpBody,
                 $headerParams, '\DocRaptor\AsyncDoc'
             );
             
             if (!$response) {
-                return null;
+                return array(null, $statusCode, $httpHeader);
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\DocRaptor\AsyncDoc', $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, '\DocRaptor\AsyncDoc', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocRaptor\AsyncDoc', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), '\DocRaptor\AsyncDoc', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
   
             throw $e;
         }
-        
-        return null;
-        
     }
     
     /**
@@ -178,10 +193,26 @@ class ClientApi
      * 
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return \SplFileObject
+     * @return ByteArray
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDoc($doc)
+    {
+        list($response, $statusCode, $httpHeader) = $this->createDocWithHttpInfo ($doc);
+        return $response; 
+    }
+
+
+    /**
+     * createDocWithHttpInfo
+     *
+     * 
+     *
+     * @param \DocRaptor\Doc $doc The document to be created. (required)
+     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @throws \DocRaptor\ApiException on non-2xx response
+     */
+    public function createDocWithHttpInfo($doc)
     {
         
         // verify the required parameter 'doc' is set
@@ -191,8 +222,6 @@ class ClientApi
   
         // parse inputs
         $resourcePath = "/docs";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "POST";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -206,6 +235,9 @@ class ClientApi
         
         
         
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
         
         // body params
         $_tempBody = null;
@@ -216,41 +248,39 @@ class ClientApi
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
         
-        $headerParams['Authorization'] = 'Basic '.base64_encode($this->apiClient->getConfig()->getUsername().":".$this->apiClient->getConfig()->getPassword());
-        
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
         
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, '\SplFileObject'
+                $headerParams, 'ByteArray'
             );
             
             if (!$response) {
-                return null;
+                return array(null, $statusCode, $httpHeader);
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'ByteArray', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'ByteArray', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
   
             throw $e;
         }
-        
-        return null;
-        
     }
     
     /**
@@ -259,10 +289,26 @@ class ClientApi
      * 
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return \SplFileObject
+     * @return ByteArray
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDoc($id)
+    {
+        list($response, $statusCode, $httpHeader) = $this->getAsyncDocWithHttpInfo ($id);
+        return $response; 
+    }
+
+
+    /**
+     * getAsyncDocWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id The download_id returned from status request or a callback. (required)
+     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @throws \DocRaptor\ApiException on non-2xx response
+     */
+    public function getAsyncDocWithHttpInfo($id)
     {
         
         // verify the required parameter 'id' is set
@@ -272,8 +318,6 @@ class ClientApi
   
         // parse inputs
         $resourcePath = "/download/{id}";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "GET";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -287,6 +331,7 @@ class ClientApi
         
         
         // path params
+        
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
@@ -294,47 +339,48 @@ class ClientApi
                 $resourcePath
             );
         }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
         
         
   
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
         
-        $headerParams['Authorization'] = 'Basic '.base64_encode($this->apiClient->getConfig()->getUsername().":".$this->apiClient->getConfig()->getPassword());
-        
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
         
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
                 $queryParams, $httpBody,
-                $headerParams, '\SplFileObject'
+                $headerParams, 'ByteArray'
             );
             
             if (!$response) {
-                return null;
+                return array(null, $statusCode, $httpHeader);
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'ByteArray', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'ByteArray', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
   
             throw $e;
         }
-        
-        return null;
-        
     }
     
     /**
@@ -348,6 +394,22 @@ class ClientApi
      */
     public function getAsyncDocStatus($id)
     {
+        list($response, $statusCode, $httpHeader) = $this->getAsyncDocStatusWithHttpInfo ($id);
+        return $response; 
+    }
+
+
+    /**
+     * getAsyncDocStatusWithHttpInfo
+     *
+     * 
+     *
+     * @param string $id The status_id returned when creating an asynchronous document. (required)
+     * @return Array of \DocRaptor\AsyncDocStatus, HTTP status code, HTTP response headers (array of strings)
+     * @throws \DocRaptor\ApiException on non-2xx response
+     */
+    public function getAsyncDocStatusWithHttpInfo($id)
+    {
         
         // verify the required parameter 'id' is set
         if ($id === null) {
@@ -356,8 +418,6 @@ class ClientApi
   
         // parse inputs
         $resourcePath = "/status/{id}";
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-        $method = "GET";
         $httpBody = '';
         $queryParams = array();
         $headerParams = array();
@@ -371,6 +431,7 @@ class ClientApi
         
         
         // path params
+        
         if ($id !== null) {
             $resourcePath = str_replace(
                 "{" . "id" . "}",
@@ -378,47 +439,48 @@ class ClientApi
                 $resourcePath
             );
         }
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
         
         
   
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } else if (count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             $httpBody = $formParams; // for HTTP post (form)
         }
         
-        $headerParams['Authorization'] = 'Basic '.base64_encode($this->apiClient->getConfig()->getUsername().":".$this->apiClient->getConfig()->getPassword());
-        
+        // this endpoint requires HTTP basic authentication
+        if (strlen($this->apiClient->getConfig()->getUsername()) !== 0 or strlen($this->apiClient->getConfig()->getPassword()) !== 0) {
+            $headerParams['Authorization'] = 'Basic ' . base64_encode($this->apiClient->getConfig()->getUsername() . ":" . $this->apiClient->getConfig()->getPassword());
+        }
         
         // make the API Call
-        try
-        {
-            list($response, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath, $method,
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath, 'GET',
                 $queryParams, $httpBody,
                 $headerParams, '\DocRaptor\AsyncDocStatus'
             );
             
             if (!$response) {
-                return null;
+                return array(null, $statusCode, $httpHeader);
             }
 
-            return $this->apiClient->getSerializer()->deserialize($response, '\DocRaptor\AsyncDocStatus', $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, '\DocRaptor\AsyncDocStatus', $httpHeader), $statusCode, $httpHeader);
             
         } catch (ApiException $e) {
             switch ($e->getCode()) { 
             case 200:
-                $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\DocRaptor\AsyncDocStatus', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), '\DocRaptor\AsyncDocStatus', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
   
             throw $e;
         }
-        
-        return null;
-        
     }
     
 }
