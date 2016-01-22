@@ -242,7 +242,7 @@ class ObjectSerializer
             }
             $deserialized = $values;
         } elseif ($class === 'ByteArray') { // byte array
-            $deserialized = unpack('C*', (string)$data);
+            $deserialized = $data;
         } elseif ($class === '\DateTime') {
             $deserialized = new \DateTime($data);
         } elseif (in_array($class, array('void', 'bool', 'string', 'double', 'byte', 'mixed', 'integer', 'float', 'int', 'DateTime', 'number', 'boolean', 'object'))) {

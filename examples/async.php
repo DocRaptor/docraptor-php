@@ -40,7 +40,9 @@ try {
     switch ($status_response->getStatus()) {
       case "completed":
         $doc_response = $docraptor->getAsyncDoc($status_response->getDownloadId());
-        rename($doc_response->getPathname(), "/tmp/docraptor-php.pdf");
+        $file = fopen("/tmp/docraptor-php.pdf", "wb");
+        fwrite($file, $doc_response);
+        fclose($file);
         echo "Wrote PDF to /tmp/docraptor-php.pdf\n";
         $done = true;
         break;

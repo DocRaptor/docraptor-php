@@ -193,7 +193,7 @@ class ClientApi
      * 
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return ByteArray
+     * @return String
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDoc($doc)
@@ -209,7 +209,7 @@ class ClientApi
      * 
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of String, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDocWithHttpInfo($doc)
@@ -289,7 +289,7 @@ class ClientApi
      * 
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return ByteArray
+     * @return String
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDoc($id)
@@ -305,7 +305,7 @@ class ClientApi
      * 
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of String, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDocWithHttpInfo($id)

@@ -34,7 +34,9 @@ try {
   # $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
   $create_response = $docraptor->createDoc($doc);
 
-  rename($create_response->getPathname(), "/tmp/docraptor-php.pdf");
+  $file = fopen("/tmp/docraptor-php.pdf", "wb");
+  fwrite($file, $create_response);
+  fclose($file);
   echo "Wrote PDF to /tmp/docraptor-php.pdf\n";
 
 } catch (DocRaptor\ApiException $error) {

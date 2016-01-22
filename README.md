@@ -48,7 +48,7 @@ $doc->setDocumentType("pdf");                                          # pdf or 
 # $prince_options->setMedia("screen");                                 # use screen styles instead of print styles
 # $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
 
-$response = $docraptor->createDoc($doc);
+$create_response = $docraptor->createDoc($doc);
 ```
 
 Docs created like this are limited to 60 seconds to render, check out the [async example](examples/async.php) which allows 10 minutes.
@@ -69,6 +69,9 @@ Stuck? We're experts at using DocRaptor so please [email our support team](mailt
 ## Development
 
 The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language php`.
+
+The generated client needed a few fixes
+- String returned instead of ByteArray
 
 ## Release Process
 
