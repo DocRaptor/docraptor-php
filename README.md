@@ -8,7 +8,7 @@ This is a PHP package for using [DocRaptor API](http://docraptor.com/documentati
 
 Install with composer:
 
-```
+```bash
 composer require docraptor/docraptor
 ```
 
