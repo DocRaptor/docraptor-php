@@ -7,11 +7,13 @@ This is a PHP package for using [DocRaptor API](http://docraptor.com/documentati
 ## Installation
 
 Install with composer:
+
 ```
 composer require docraptor/docraptor
 ```
 
-And then composer's autoload
+And then composer's autoload:
+
 ```php
 require_once('vendor/autoload.php');
 ```
