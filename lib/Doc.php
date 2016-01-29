@@ -140,13 +140,13 @@ class Doc implements ArrayAccess
     protected $document_type;
     
     /**
-      * $document_content The HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+      * $document_content The HTML data to be transformed into a document. You must supply content using document_content or document_url.
       * @var string
       */
     protected $document_content;
     
     /**
-      * $document_url The URL to fetch the HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+      * $document_url The URL to fetch the HTML data to be transformed into a document. You must supply content using document_content or document_url.
       * @var string
       */
     protected $document_url;
@@ -194,7 +194,7 @@ class Doc implements ArrayAccess
     protected $referrer;
     
     /**
-      * $callback_url A URL that will receive a POST request after successfully completing an asynchronous document.\nThe POST data will include download_url and download_id similar to status api responses.\nWARNING: this only works on asynchronous documents.
+      * $callback_url A URL that will receive a POST request after successfully completing an asynchronous document. The POST data will include download_url and download_id similar to status api responses. WARNING: this only works on asynchronous documents.
       * @var string
       */
     protected $callback_url;
@@ -285,7 +285,7 @@ class Doc implements ArrayAccess
   
     /**
      * Sets document_content
-     * @param string $document_content The HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+     * @param string $document_content The HTML data to be transformed into a document. You must supply content using document_content or document_url.
      * @return $this
      */
     public function setDocumentContent($document_content)
@@ -306,7 +306,7 @@ class Doc implements ArrayAccess
   
     /**
      * Sets document_url
-     * @param string $document_url The URL to fetch the HTML data to be transformed into a document.\nYou must supply content using document_content or document_url.
+     * @param string $document_url The URL to fetch the HTML data to be transformed into a document. You must supply content using document_content or document_url.
      * @return $this
      */
     public function setDocumentUrl($document_url)
@@ -477,7 +477,7 @@ class Doc implements ArrayAccess
   
     /**
      * Sets callback_url
-     * @param string $callback_url A URL that will receive a POST request after successfully completing an asynchronous document.\nThe POST data will include download_url and download_id similar to status api responses.\nWARNING: this only works on asynchronous documents.
+     * @param string $callback_url A URL that will receive a POST request after successfully completing an asynchronous document. The POST data will include download_url and download_id similar to status api responses. WARNING: this only works on asynchronous documents.
      * @return $this
      */
     public function setCallbackUrl($callback_url)
