@@ -1,8 +1,7 @@
 # DocRaptor PHP Native Client Library
 
-**WARNING: This code is not production ready, you should use [this](https://docraptor.com/documentatino/php).**
-
 This is a PHP package for using [DocRaptor API](http://docraptor.com/documentation) to convert HTML to PDF and XLSX.
+
 
 ## Installation
 
@@ -28,27 +27,28 @@ release](https://github.com/docraptor/docraptor-php/releases), unzip in your pro
 require_once('/path/to/docraptor-php/autoload.php');
 ```
 
+
 ## Usage
 
 See [examples](examples/) for runnable examples with file output, error handling, etc.
 
 ```php
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
-$configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
-# $configuration->setDebug(true);
+$configuration->setUsername("YOUR_API_KEY_HERE"); // this key works for test documents
+// $configuration->setDebug(true);
 $docraptor = new DocRaptor\ClientApi();
 
 $doc = new DocRaptor\Doc();
-$doc->setTest(true);                                                   # test documents are free but watermarked
-$doc->setDocumentContent("<html><body>Hello World</body></html>");     # supply content directly
-# $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html");  # or use a url
-$doc->setName("docraptor-php.pdf");                                    # help you find a document later
-$doc->setDocumentType("pdf");                                          # pdf or xls or xlsx
-# $doc->setJavascript(true);                                           # enable JavaScript processing
-# $prince_options = new PrinceOptions();                               # pdf-specific options
-# $doc->setPrinceOptions($prince_options)
-# $prince_options->setMedia("screen");                                 # use screen styles instead of print styles
-# $prince_options->setBaseurl("http://hello.com");                     # pretend URL when using document_content
+$doc->setTest(true);                                                   // test documents are free but watermarked
+$doc->setDocumentContent("<html><body>Hello World</body></html>");     // supply content directly
+// $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html"); // or use a url
+$doc->setName("docraptor-php.pdf");                                    // help you find a document later
+$doc->setDocumentType("pdf");                                          // pdf or xls or xlsx
+// $doc->setJavascript(true);                                          // enable JavaScript processing
+// $prince_options = new PrinceOptions();                              // pdf-specific options
+// $doc->setPrinceOptions($prince_options)
+// $prince_options->setMedia("screen");                                // use screen styles instead of print styles
+// $prince_options->setBaseurl("http://hello.com");                    // pretend URL when using document_content
 
 $create_response = $docraptor->createDoc($doc);
 ```
@@ -61,6 +61,7 @@ We have guides for doing some of the common things:
 * [Headers and Footers](https://docraptor.com/documentation/style#pdf-headers-footers) including page skipping
 * [CSS Media Selector](https://docraptor.com/documentation/api#api_basic_pdf) to make the page look exactly as it does in your browser
 * [Protected Content](https://docraptor.com/documentation/api#api_advanced_pdf) to secure your URLs so only DocRaptor can access them
+
 
 ## More Help
 
@@ -76,6 +77,7 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 The generated client needed a few fixes
 - String returned instead of ByteArray
 
+
 ## Release Process
 
 1. `script/test`
@@ -87,6 +89,8 @@ The generated client needed a few fixes
 4. Tag version: `git tag 'v0.0.x' && git push --tags`
 5. Push to GitHub (packagist webhook will update their site)
 6. Verify update on https://packagist.org/packages/docraptor/docraptor
+7. Update documentation on docraptor.com
+
 
 ## Version Policy
 
