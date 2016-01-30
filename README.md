@@ -83,7 +83,6 @@ The generated client needed a few fixes
 1. `script/test`
 2. Increment version in code:
   - `swagger-config.json`
-  - `composer.json`
   - `lib/Configuration.php` (2 places)
 3. Update [CHANGELOG.md](CHANGELOG.md)
 4. Tag version: `git tag 'v0.0.x' && git push --tags`
