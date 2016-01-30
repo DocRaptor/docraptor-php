@@ -85,8 +85,8 @@ The generated client needed a few fixes
   - `swagger-config.json`
   - `lib/Configuration.php` (2 places)
 3. Update [CHANGELOG.md](CHANGELOG.md)
-4. Tag version: `git tag 'v0.0.x' && git push --tags`
-5. Push to GitHub (packagist webhook will update their site)
+4. Push to GitHub (packagist webhook will update their site)
+5. Tag version: `git tag 'v0.0.x' && git push --tags`
 6. Verify update on https://packagist.org/packages/docraptor/docraptor
 7. Update documentation on docraptor.com
 
