@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientApi
+ * DocApi
  * PHP version 5
  *
  * @category Class
@@ -39,7 +39,7 @@ use \DocRaptor\ApiException;
 use \DocRaptor\ObjectSerializer;
 
 /**
- * ClientApi Class Doc Comment
+ * DocApi Class Doc Comment
  *
  * @category Class
  * @package  DocRaptor
@@ -47,7 +47,7 @@ use \DocRaptor\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ClientApi
+class DocApi
 {
 
     /**
@@ -82,7 +82,7 @@ class ClientApi
     /**
      * Set the API client
      * @param \DocRaptor\ApiClient $apiClient set the API client
-     * @return ClientApi
+     * @return DocApi
      */
     public function setApiClient(ApiClient $apiClient)
     {
@@ -193,7 +193,7 @@ class ClientApi
      * 
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return String
+     * @return string
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDoc($doc)
@@ -209,7 +209,7 @@ class ClientApi
      * 
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return Array of String, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDocWithHttpInfo($doc)
@@ -289,7 +289,7 @@ class ClientApi
      * 
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return String
+     * @return string
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDoc($id)
@@ -305,7 +305,7 @@ class ClientApi
      * 
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return Array of String, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDocWithHttpInfo($id)

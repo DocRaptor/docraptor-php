@@ -36,7 +36,7 @@ See [examples](examples/) for runnable examples with file output, error handling
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); // this key works for test documents
 // $configuration->setDebug(true);
-$docraptor = new DocRaptor\ClientApi();
+$docraptor = new DocRaptor\DocApi();
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);                                                   // test documents are free but watermarked

@@ -1,6 +1,6 @@
 <?php
 /**
- * ClientApiTest
+ * DocApiTest
  * PHP version 5
  *
  * @category Class
@@ -39,7 +39,7 @@ use \DocRaptor\ApiException;
 use \DocRaptor\ObjectSerializer;
 
 /**
- * ClientApiTest Class Doc Comment
+ * DocApiTest Class Doc Comment
  *
  * @category Class
  * @package  DocRaptor
@@ -47,7 +47,7 @@ use \DocRaptor\ObjectSerializer;
  * @license  http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
  * @link     https://github.com/swagger-api/swagger-codegen
  */
-class ClientApiTest extends \PHPUnit_Framework_TestCase
+class DocApiTest extends \PHPUnit_Framework_TestCase
 {
 
     /**

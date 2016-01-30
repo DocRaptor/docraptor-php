@@ -17,7 +17,7 @@ require "../autoload.php";
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
 # $configuration->setDebug(true);
-$docraptor = new DocRaptor\ClientApi();
+$docraptor = new DocRaptor\DocApi();
 
 try {
 

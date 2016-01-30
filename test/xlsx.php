@@ -4,7 +4,7 @@ require "../autoload.php";
 $configuration = DocRaptor\Configuration::getDefaultConfiguration();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 # $configuration->setDebug(true);
-$docraptor = new DocRaptor\ClientApi();
+$docraptor = new DocRaptor\DocApi();
 
 $doc = new DocRaptor\Doc();
 $doc->setName("php-xlsx.xlsx");
