@@ -1,3 +1,6 @@
+### 0.2.1 [January 30, 2016]
+* Fix release process issue causing 0.2.0 to not be seen by packagist.
+
 ### 0.2.0 [January 29, 2016]
 * **BREAKING CHANGE**: Rename ClientApi to DocApi
 
