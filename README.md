@@ -1,26 +1,18 @@
 # DocRaptor PHP Native Client Library
 
-This is a PHP package for using [DocRaptor API](http://docraptor.com/documentation) to convert HTML to PDF and XLSX.
+This is a PHP package for using [DocRaptor API](https://docraptor.com/documentation) to convert [HTML to PDF and XLSX](https://docraptor.com).
 
 
-## Installation
-
-Install with composer:
+## Composer Installation
 
 ```bash
 composer require docraptor/docraptor
 ```
 
-And then composer's autoload:
-
-```php
-require_once('vendor/autoload.php');
-```
-
 ## Manual Installation
 
 If you do not wish to use Composer, you can download the [latest
-release](https://github.com/docraptor/docraptor-php/releases), unzip in your project and require the `autoload.php`.
+release](https://github.com/docraptor/docraptor-php/releases), unzip in your project and require `autoload.php`.
 
 
 ```php
