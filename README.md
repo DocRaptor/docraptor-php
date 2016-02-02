@@ -52,7 +52,7 @@ We have guides for doing some of the common things:
 
 * [Headers and Footers](https://docraptor.com/documentation/style#pdf-headers-footers) including page skipping
 * [CSS Media Selector](https://docraptor.com/documentation/api#api_basic_pdf) to make the page look exactly as it does in your browser
-* [Protected Content](https://docraptor.com/documentation/api#api_advanced_pdf) to secure your URLs so only DocRaptor can access them
+* Protect content with [HTTP authentication](https://docraptor.com/documentation/api#api_http_user) or [proxies](https://docraptor.com/documentation/api#api_http_proxy) so only DocRaptor can access them
 
 
 ## More Help
