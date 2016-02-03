@@ -38,7 +38,7 @@ use \ArrayAccess;
  * AsyncDocStatus Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     DocRaptor
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -47,7 +47,7 @@ use \ArrayAccess;
 class AsyncDocStatus implements ArrayAccess
 {
     /**
-      * Array of property to type mappings. Used for (de)serialization 
+      * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     static $swaggerTypes = array(
@@ -58,10 +58,10 @@ class AsyncDocStatus implements ArrayAccess
         'number_of_pages' => 'int',
         'validation_errors' => 'string'
     );
-  
-    /** 
+
+    /**
       * Array of attributes where the key is the local name, and the value is the original name
-      * @var string[] 
+      * @var string[]
       */
     static $attributeMap = array(
         'status' => 'status',
@@ -71,7 +71,7 @@ class AsyncDocStatus implements ArrayAccess
         'number_of_pages' => 'number_of_pages',
         'validation_errors' => 'validation_errors'
     );
-  
+
     /**
       * Array of attributes to setter functions (for deserialization of responses)
       * @var string[]
@@ -84,7 +84,7 @@ class AsyncDocStatus implements ArrayAccess
         'number_of_pages' => 'setNumberOfPages',
         'validation_errors' => 'setValidationErrors'
     );
-  
+
     /**
       * Array of attributes to getter functions (for serialization of requests)
       * @var string[]
@@ -97,44 +97,44 @@ class AsyncDocStatus implements ArrayAccess
         'number_of_pages' => 'getNumberOfPages',
         'validation_errors' => 'getValidationErrors'
     );
-  
-    
+
+
     /**
       * $status The present status of the document. Can be queued, working, completed, and failed.
       * @var string
       */
     protected $status;
-    
+
     /**
       * $download_url The URL where the document can be retrieved. This URL may only be used a few times.
       * @var string
       */
     protected $download_url;
-    
+
     /**
       * $download_id The identifier for downloading the document with the download api.
       * @var string
       */
     protected $download_id;
-    
+
     /**
       * $message Additional information.
       * @var string
       */
     protected $message;
-    
+
     /**
       * $number_of_pages Number of PDF pages in document.
       * @var int
       */
     protected $number_of_pages;
-    
+
     /**
       * $validation_errors Error information.
       * @var string
       */
     protected $validation_errors;
-    
+
 
     /**
      * Constructor
@@ -151,7 +151,7 @@ class AsyncDocStatus implements ArrayAccess
             $this->validation_errors = $data["validation_errors"];
         }
     }
-    
+
     /**
      * Gets status
      * @return string
@@ -160,7 +160,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->status;
     }
-  
+
     /**
      * Sets status
      * @param string $status The present status of the document. Can be queued, working, completed, and failed.
@@ -168,11 +168,11 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setStatus($status)
     {
-        
+
         $this->status = $status;
         return $this;
     }
-    
+
     /**
      * Gets download_url
      * @return string
@@ -181,7 +181,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->download_url;
     }
-  
+
     /**
      * Sets download_url
      * @param string $download_url The URL where the document can be retrieved. This URL may only be used a few times.
@@ -189,11 +189,11 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setDownloadUrl($download_url)
     {
-        
+
         $this->download_url = $download_url;
         return $this;
     }
-    
+
     /**
      * Gets download_id
      * @return string
@@ -202,7 +202,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->download_id;
     }
-  
+
     /**
      * Sets download_id
      * @param string $download_id The identifier for downloading the document with the download api.
@@ -210,11 +210,11 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setDownloadId($download_id)
     {
-        
+
         $this->download_id = $download_id;
         return $this;
     }
-    
+
     /**
      * Gets message
      * @return string
@@ -223,7 +223,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->message;
     }
-  
+
     /**
      * Sets message
      * @param string $message Additional information.
@@ -231,11 +231,11 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setMessage($message)
     {
-        
+
         $this->message = $message;
         return $this;
     }
-    
+
     /**
      * Gets number_of_pages
      * @return int
@@ -244,7 +244,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->number_of_pages;
     }
-  
+
     /**
      * Sets number_of_pages
      * @param int $number_of_pages Number of PDF pages in document.
@@ -252,11 +252,11 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setNumberOfPages($number_of_pages)
     {
-        
+
         $this->number_of_pages = $number_of_pages;
         return $this;
     }
-    
+
     /**
      * Gets validation_errors
      * @return string
@@ -265,7 +265,7 @@ class AsyncDocStatus implements ArrayAccess
     {
         return $this->validation_errors;
     }
-  
+
     /**
      * Sets validation_errors
      * @param string $validation_errors Error information.
@@ -273,34 +273,34 @@ class AsyncDocStatus implements ArrayAccess
      */
     public function setValidationErrors($validation_errors)
     {
-        
+
         $this->validation_errors = $validation_errors;
         return $this;
     }
-    
+
     /**
      * Returns true if offset exists. False otherwise.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-  
+
     /**
      * Gets offset.
-     * @param  integer $offset Offset 
-     * @return mixed 
+     * @param  integer $offset Offset
+     * @return mixed
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-  
+
     /**
      * Sets value based on offset.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @param  mixed   $value  Value to be set
      * @return void
      */
@@ -308,17 +308,17 @@ class AsyncDocStatus implements ArrayAccess
     {
         $this->$offset = $value;
     }
-  
+
     /**
      * Unsets offset.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-  
+
     /**
      * Gets the string presentation of the object
      * @return string

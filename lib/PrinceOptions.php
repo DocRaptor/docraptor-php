@@ -38,7 +38,7 @@ use \ArrayAccess;
  * PrinceOptions Class Doc Comment
  *
  * @category    Class
- * @description 
+ * @description
  * @package     DocRaptor
  * @author      http://github.com/swagger-api/swagger-codegen
  * @license     http://www.apache.org/licenses/LICENSE-2.0 Apache Licene v2
@@ -47,7 +47,7 @@ use \ArrayAccess;
 class PrinceOptions implements ArrayAccess
 {
     /**
-      * Array of property to type mappings. Used for (de)serialization 
+      * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     static $swaggerTypes = array(
@@ -79,10 +79,10 @@ class PrinceOptions implements ArrayAccess
         'css_dpi' => 'int',
         'profile' => 'string'
     );
-  
-    /** 
+
+    /**
       * Array of attributes where the key is the local name, and the value is the original name
-      * @var string[] 
+      * @var string[]
       */
     static $attributeMap = array(
         'baseurl' => 'baseurl',
@@ -113,7 +113,7 @@ class PrinceOptions implements ArrayAccess
         'css_dpi' => 'css_dpi',
         'profile' => 'profile'
     );
-  
+
     /**
       * Array of attributes to setter functions (for deserialization of responses)
       * @var string[]
@@ -147,7 +147,7 @@ class PrinceOptions implements ArrayAccess
         'css_dpi' => 'setCssDpi',
         'profile' => 'setProfile'
     );
-  
+
     /**
       * Array of attributes to getter functions (for serialization of requests)
       * @var string[]
@@ -181,170 +181,170 @@ class PrinceOptions implements ArrayAccess
         'css_dpi' => 'getCssDpi',
         'profile' => 'getProfile'
     );
-  
-    
+
+
     /**
       * $baseurl Set the baseurl for assets.
       * @var string
       */
     protected $baseurl;
-    
+
     /**
       * $no_xinclude Disable XML inclusion.
       * @var bool
       */
     protected $no_xinclude;
-    
+
     /**
       * $no_network Disable network access.
       * @var bool
       */
     protected $no_network;
-    
+
     /**
       * $http_user Set the user for HTTP authentication.
       * @var string
       */
     protected $http_user;
-    
+
     /**
       * $http_password Set the password for HTTP authentication.
       * @var string
       */
     protected $http_password;
-    
+
     /**
       * $http_proxy Set the HTTP proxy server.
       * @var string
       */
     protected $http_proxy;
-    
+
     /**
       * $http_timeout Set the HTTP request timeout.
       * @var int
       */
     protected $http_timeout;
-    
+
     /**
       * $insecure Disable SSL verification.
       * @var bool
       */
     protected $insecure;
-    
+
     /**
       * $media Specify the CSS media type. Defaults to \"print\" but you may want to use \"screen\" for web styles.
       * @var string
       */
     protected $media = 'print';
-    
+
     /**
       * $no_author_style Ignore author stylesheets.
       * @var bool
       */
     protected $no_author_style;
-    
+
     /**
       * $no_default_style Ignore default stylesheets.
       * @var bool
       */
     protected $no_default_style;
-    
+
     /**
       * $no_embed_fonts Disable font embedding in PDFs.
       * @var bool
       */
     protected $no_embed_fonts;
-    
+
     /**
       * $no_subset_fonts Disable font subsetting in PDFs.
       * @var bool
       */
     protected $no_subset_fonts;
-    
+
     /**
       * $no_compress Disable PDF compression.
       * @var bool
       */
     protected $no_compress;
-    
+
     /**
       * $encrypt Encrypt PDF output.
       * @var bool
       */
     protected $encrypt;
-    
+
     /**
       * $key_bits Set encryption key size.
       * @var int
       */
     protected $key_bits;
-    
+
     /**
       * $user_password Set the PDF user password.
       * @var string
       */
     protected $user_password;
-    
+
     /**
       * $owner_password Set the PDF owner password.
       * @var string
       */
     protected $owner_password;
-    
+
     /**
       * $disallow_print Disallow printing of this PDF.
       * @var bool
       */
     protected $disallow_print;
-    
+
     /**
       * $disallow_copy Disallow copying of this PDF.
       * @var bool
       */
     protected $disallow_copy;
-    
+
     /**
       * $disallow_annotate Disallow annotation of this PDF.
       * @var bool
       */
     protected $disallow_annotate;
-    
+
     /**
       * $disallow_modify Disallow modification of this PDF.
       * @var bool
       */
     protected $disallow_modify;
-    
+
     /**
       * $input Specify the input format.
       * @var string
       */
     protected $input = 'html';
-    
+
     /**
       * $version Specify a specific verison of PrinceXML to use.
       * @var string
       */
     protected $version;
-    
+
     /**
       * $javascript Enable PrinceXML JavaScript. DocRaptor JavaScript parsing is also available elsewhere.
       * @var bool
       */
     protected $javascript;
-    
+
     /**
       * $css_dpi Set the DPI when rendering CSS. Defaults to 96 but can be set with Prince 9.0 and up.
       * @var int
       */
     protected $css_dpi;
-    
+
     /**
       * $profile In Prince 9.0 and up you can set the PDF profile.
       * @var string
       */
     protected $profile;
-    
+
 
     /**
      * Constructor
@@ -382,7 +382,7 @@ class PrinceOptions implements ArrayAccess
             $this->profile = $data["profile"];
         }
     }
-    
+
     /**
      * Gets baseurl
      * @return string
@@ -391,7 +391,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->baseurl;
     }
-  
+
     /**
      * Sets baseurl
      * @param string $baseurl Set the baseurl for assets.
@@ -399,11 +399,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setBaseurl($baseurl)
     {
-        
+
         $this->baseurl = $baseurl;
         return $this;
     }
-    
+
     /**
      * Gets no_xinclude
      * @return bool
@@ -412,7 +412,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_xinclude;
     }
-  
+
     /**
      * Sets no_xinclude
      * @param bool $no_xinclude Disable XML inclusion.
@@ -420,11 +420,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoXinclude($no_xinclude)
     {
-        
+
         $this->no_xinclude = $no_xinclude;
         return $this;
     }
-    
+
     /**
      * Gets no_network
      * @return bool
@@ -433,7 +433,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_network;
     }
-  
+
     /**
      * Sets no_network
      * @param bool $no_network Disable network access.
@@ -441,11 +441,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoNetwork($no_network)
     {
-        
+
         $this->no_network = $no_network;
         return $this;
     }
-    
+
     /**
      * Gets http_user
      * @return string
@@ -454,7 +454,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->http_user;
     }
-  
+
     /**
      * Sets http_user
      * @param string $http_user Set the user for HTTP authentication.
@@ -462,11 +462,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setHttpUser($http_user)
     {
-        
+
         $this->http_user = $http_user;
         return $this;
     }
-    
+
     /**
      * Gets http_password
      * @return string
@@ -475,7 +475,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->http_password;
     }
-  
+
     /**
      * Sets http_password
      * @param string $http_password Set the password for HTTP authentication.
@@ -483,11 +483,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setHttpPassword($http_password)
     {
-        
+
         $this->http_password = $http_password;
         return $this;
     }
-    
+
     /**
      * Gets http_proxy
      * @return string
@@ -496,7 +496,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->http_proxy;
     }
-  
+
     /**
      * Sets http_proxy
      * @param string $http_proxy Set the HTTP proxy server.
@@ -504,11 +504,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setHttpProxy($http_proxy)
     {
-        
+
         $this->http_proxy = $http_proxy;
         return $this;
     }
-    
+
     /**
      * Gets http_timeout
      * @return int
@@ -517,7 +517,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->http_timeout;
     }
-  
+
     /**
      * Sets http_timeout
      * @param int $http_timeout Set the HTTP request timeout.
@@ -525,11 +525,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setHttpTimeout($http_timeout)
     {
-        
+
         $this->http_timeout = $http_timeout;
         return $this;
     }
-    
+
     /**
      * Gets insecure
      * @return bool
@@ -538,7 +538,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->insecure;
     }
-  
+
     /**
      * Sets insecure
      * @param bool $insecure Disable SSL verification.
@@ -546,11 +546,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setInsecure($insecure)
     {
-        
+
         $this->insecure = $insecure;
         return $this;
     }
-    
+
     /**
      * Gets media
      * @return string
@@ -559,7 +559,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->media;
     }
-  
+
     /**
      * Sets media
      * @param string $media Specify the CSS media type. Defaults to \"print\" but you may want to use \"screen\" for web styles.
@@ -567,11 +567,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setMedia($media)
     {
-        
+
         $this->media = $media;
         return $this;
     }
-    
+
     /**
      * Gets no_author_style
      * @return bool
@@ -580,7 +580,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_author_style;
     }
-  
+
     /**
      * Sets no_author_style
      * @param bool $no_author_style Ignore author stylesheets.
@@ -588,11 +588,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoAuthorStyle($no_author_style)
     {
-        
+
         $this->no_author_style = $no_author_style;
         return $this;
     }
-    
+
     /**
      * Gets no_default_style
      * @return bool
@@ -601,7 +601,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_default_style;
     }
-  
+
     /**
      * Sets no_default_style
      * @param bool $no_default_style Ignore default stylesheets.
@@ -609,11 +609,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoDefaultStyle($no_default_style)
     {
-        
+
         $this->no_default_style = $no_default_style;
         return $this;
     }
-    
+
     /**
      * Gets no_embed_fonts
      * @return bool
@@ -622,7 +622,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_embed_fonts;
     }
-  
+
     /**
      * Sets no_embed_fonts
      * @param bool $no_embed_fonts Disable font embedding in PDFs.
@@ -630,11 +630,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoEmbedFonts($no_embed_fonts)
     {
-        
+
         $this->no_embed_fonts = $no_embed_fonts;
         return $this;
     }
-    
+
     /**
      * Gets no_subset_fonts
      * @return bool
@@ -643,7 +643,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_subset_fonts;
     }
-  
+
     /**
      * Sets no_subset_fonts
      * @param bool $no_subset_fonts Disable font subsetting in PDFs.
@@ -651,11 +651,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoSubsetFonts($no_subset_fonts)
     {
-        
+
         $this->no_subset_fonts = $no_subset_fonts;
         return $this;
     }
-    
+
     /**
      * Gets no_compress
      * @return bool
@@ -664,7 +664,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->no_compress;
     }
-  
+
     /**
      * Sets no_compress
      * @param bool $no_compress Disable PDF compression.
@@ -672,11 +672,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setNoCompress($no_compress)
     {
-        
+
         $this->no_compress = $no_compress;
         return $this;
     }
-    
+
     /**
      * Gets encrypt
      * @return bool
@@ -685,7 +685,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->encrypt;
     }
-  
+
     /**
      * Sets encrypt
      * @param bool $encrypt Encrypt PDF output.
@@ -693,11 +693,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setEncrypt($encrypt)
     {
-        
+
         $this->encrypt = $encrypt;
         return $this;
     }
-    
+
     /**
      * Gets key_bits
      * @return int
@@ -706,7 +706,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->key_bits;
     }
-  
+
     /**
      * Sets key_bits
      * @param int $key_bits Set encryption key size.
@@ -714,11 +714,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setKeyBits($key_bits)
     {
-        
+
         $this->key_bits = $key_bits;
         return $this;
     }
-    
+
     /**
      * Gets user_password
      * @return string
@@ -727,7 +727,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->user_password;
     }
-  
+
     /**
      * Sets user_password
      * @param string $user_password Set the PDF user password.
@@ -735,11 +735,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setUserPassword($user_password)
     {
-        
+
         $this->user_password = $user_password;
         return $this;
     }
-    
+
     /**
      * Gets owner_password
      * @return string
@@ -748,7 +748,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->owner_password;
     }
-  
+
     /**
      * Sets owner_password
      * @param string $owner_password Set the PDF owner password.
@@ -756,11 +756,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setOwnerPassword($owner_password)
     {
-        
+
         $this->owner_password = $owner_password;
         return $this;
     }
-    
+
     /**
      * Gets disallow_print
      * @return bool
@@ -769,7 +769,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->disallow_print;
     }
-  
+
     /**
      * Sets disallow_print
      * @param bool $disallow_print Disallow printing of this PDF.
@@ -777,11 +777,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setDisallowPrint($disallow_print)
     {
-        
+
         $this->disallow_print = $disallow_print;
         return $this;
     }
-    
+
     /**
      * Gets disallow_copy
      * @return bool
@@ -790,7 +790,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->disallow_copy;
     }
-  
+
     /**
      * Sets disallow_copy
      * @param bool $disallow_copy Disallow copying of this PDF.
@@ -798,11 +798,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setDisallowCopy($disallow_copy)
     {
-        
+
         $this->disallow_copy = $disallow_copy;
         return $this;
     }
-    
+
     /**
      * Gets disallow_annotate
      * @return bool
@@ -811,7 +811,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->disallow_annotate;
     }
-  
+
     /**
      * Sets disallow_annotate
      * @param bool $disallow_annotate Disallow annotation of this PDF.
@@ -819,11 +819,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setDisallowAnnotate($disallow_annotate)
     {
-        
+
         $this->disallow_annotate = $disallow_annotate;
         return $this;
     }
-    
+
     /**
      * Gets disallow_modify
      * @return bool
@@ -832,7 +832,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->disallow_modify;
     }
-  
+
     /**
      * Sets disallow_modify
      * @param bool $disallow_modify Disallow modification of this PDF.
@@ -840,11 +840,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setDisallowModify($disallow_modify)
     {
-        
+
         $this->disallow_modify = $disallow_modify;
         return $this;
     }
-    
+
     /**
      * Gets input
      * @return string
@@ -853,7 +853,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->input;
     }
-  
+
     /**
      * Sets input
      * @param string $input Specify the input format.
@@ -868,7 +868,7 @@ class PrinceOptions implements ArrayAccess
         $this->input = $input;
         return $this;
     }
-    
+
     /**
      * Gets version
      * @return string
@@ -877,7 +877,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->version;
     }
-  
+
     /**
      * Sets version
      * @param string $version Specify a specific verison of PrinceXML to use.
@@ -885,11 +885,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setVersion($version)
     {
-        
+
         $this->version = $version;
         return $this;
     }
-    
+
     /**
      * Gets javascript
      * @return bool
@@ -898,7 +898,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->javascript;
     }
-  
+
     /**
      * Sets javascript
      * @param bool $javascript Enable PrinceXML JavaScript. DocRaptor JavaScript parsing is also available elsewhere.
@@ -906,11 +906,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setJavascript($javascript)
     {
-        
+
         $this->javascript = $javascript;
         return $this;
     }
-    
+
     /**
      * Gets css_dpi
      * @return int
@@ -919,7 +919,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->css_dpi;
     }
-  
+
     /**
      * Sets css_dpi
      * @param int $css_dpi Set the DPI when rendering CSS. Defaults to 96 but can be set with Prince 9.0 and up.
@@ -927,11 +927,11 @@ class PrinceOptions implements ArrayAccess
      */
     public function setCssDpi($css_dpi)
     {
-        
+
         $this->css_dpi = $css_dpi;
         return $this;
     }
-    
+
     /**
      * Gets profile
      * @return string
@@ -940,7 +940,7 @@ class PrinceOptions implements ArrayAccess
     {
         return $this->profile;
     }
-  
+
     /**
      * Sets profile
      * @param string $profile In Prince 9.0 and up you can set the PDF profile.
@@ -948,34 +948,34 @@ class PrinceOptions implements ArrayAccess
      */
     public function setProfile($profile)
     {
-        
+
         $this->profile = $profile;
         return $this;
     }
-    
+
     /**
      * Returns true if offset exists. False otherwise.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @return boolean
      */
     public function offsetExists($offset)
     {
         return isset($this->$offset);
     }
-  
+
     /**
      * Gets offset.
-     * @param  integer $offset Offset 
-     * @return mixed 
+     * @param  integer $offset Offset
+     * @return mixed
      */
     public function offsetGet($offset)
     {
         return $this->$offset;
     }
-  
+
     /**
      * Sets value based on offset.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @param  mixed   $value  Value to be set
      * @return void
      */
@@ -983,17 +983,17 @@ class PrinceOptions implements ArrayAccess
     {
         $this->$offset = $value;
     }
-  
+
     /**
      * Unsets offset.
-     * @param  integer $offset Offset 
+     * @param  integer $offset Offset
      * @return void
      */
     public function offsetUnset($offset)
     {
         unset($this->$offset);
     }
-  
+
     /**
      * Gets the string presentation of the object
      * @return string

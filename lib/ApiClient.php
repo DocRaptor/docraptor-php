@@ -160,7 +160,7 @@ class ApiClient
         if ($this->config->getCurlTimeout() != 0) {
             curl_setopt($curl, CURLOPT_TIMEOUT, $this->config->getCurlTimeout());
         }
-        // return the result on success, rather than just true 
+        // return the result on success, rather than just true
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
         curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
@@ -300,11 +300,11 @@ class ApiClient
         // ref/credit: http://php.net/manual/en/function.http-parse-headers.php#112986
         $headers = array();
         $key = ''; // [+]
-   
+
         foreach(explode("\n", $raw_headers) as $i => $h)
         {
             $h = explode(':', $h, 2);
-   
+
             if (isset($h[1]))
             {
                 if (!isset($headers[$h[0]]))
@@ -321,7 +321,7 @@ class ApiClient
                     // $headers[$h[0]] = $tmp; // [-]
                     $headers[$h[0]] = array_merge(array($headers[$h[0]]), array(trim($h[1]))); // [+]
                 }
-   
+
                 $key = $h[0]; // [+]
             }
             else // [+]
@@ -332,7 +332,7 @@ class ApiClient
                     $headers[0] = trim($h[0]);trim($h[0]); // [+]
             } // [+]
         }
-   
+
         return $headers;
     }
 }
