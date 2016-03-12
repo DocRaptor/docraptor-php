@@ -153,7 +153,7 @@ class ObjectSerializer
      */
     public function toFormValue($value)
     {
-        if ($value instanceof SplFileObject) {
+        if ($value instanceof \SplFileObject) {
             return $value->getRealPath();
         } else {
             return $this->toString($value);
@@ -241,7 +241,8 @@ class ObjectSerializer
                 $values[] = self::deserialize($value, $subClass);
             }
             $deserialized = $values;
-        } elseif ($class === 'ByteArray') { // byte array
+        } elseif ($class === 'object') {
+            settype($data, 'array');
             $deserialized = $data;
         } elseif ($class === '\DateTime') {
             $deserialized = new \DateTime($data);

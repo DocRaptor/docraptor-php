@@ -209,7 +209,7 @@ class DocApi
      *
      *
      * @param \DocRaptor\Doc $doc The document to be created. (required)
-     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of string, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function createDocWithHttpInfo($doc)
@@ -262,19 +262,19 @@ class DocApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'POST',
                 $queryParams, $httpBody,
-                $headerParams, 'ByteArray'
+                $headerParams, 'string'
             );
 
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'ByteArray', $httpHeader), $statusCode, $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader);
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'ByteArray', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
@@ -305,7 +305,7 @@ class DocApi
      *
      *
      * @param string $id The download_id returned from status request or a callback. (required)
-     * @return Array of ByteArray, HTTP status code, HTTP response headers (array of strings)
+     * @return Array of string, HTTP status code, HTTP response headers (array of strings)
      * @throws \DocRaptor\ApiException on non-2xx response
      */
     public function getAsyncDocWithHttpInfo($id)
@@ -362,19 +362,19 @@ class DocApi
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath, 'GET',
                 $queryParams, $httpBody,
-                $headerParams, 'ByteArray'
+                $headerParams, 'string'
             );
 
             if (!$response) {
                 return array(null, $statusCode, $httpHeader);
             }
 
-            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'ByteArray', $httpHeader), $statusCode, $httpHeader);
+            return array(\DocRaptor\ObjectSerializer::deserialize($response, 'string', $httpHeader), $statusCode, $httpHeader);
 
         } catch (ApiException $e) {
             switch ($e->getCode()) {
             case 200:
-                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'ByteArray', $e->getResponseHeaders());
+                $data = \DocRaptor\ObjectSerializer::deserialize($e->getResponseBody(), 'string', $e->getResponseHeaders());
                 $e->setResponseObject($data);
                 break;
             }
