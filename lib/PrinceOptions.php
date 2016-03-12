@@ -73,6 +73,7 @@ class PrinceOptions implements ArrayAccess
         'disallow_copy' => 'bool',
         'disallow_annotate' => 'bool',
         'disallow_modify' => 'bool',
+        'debug' => 'bool',
         'input' => 'string',
         'version' => 'string',
         'javascript' => 'bool',
@@ -107,6 +108,7 @@ class PrinceOptions implements ArrayAccess
         'disallow_copy' => 'disallow_copy',
         'disallow_annotate' => 'disallow_annotate',
         'disallow_modify' => 'disallow_modify',
+        'debug' => 'debug',
         'input' => 'input',
         'version' => 'version',
         'javascript' => 'javascript',
@@ -141,6 +143,7 @@ class PrinceOptions implements ArrayAccess
         'disallow_copy' => 'setDisallowCopy',
         'disallow_annotate' => 'setDisallowAnnotate',
         'disallow_modify' => 'setDisallowModify',
+        'debug' => 'setDebug',
         'input' => 'setInput',
         'version' => 'setVersion',
         'javascript' => 'setJavascript',
@@ -175,6 +178,7 @@ class PrinceOptions implements ArrayAccess
         'disallow_copy' => 'getDisallowCopy',
         'disallow_annotate' => 'getDisallowAnnotate',
         'disallow_modify' => 'getDisallowModify',
+        'debug' => 'getDebug',
         'input' => 'getInput',
         'version' => 'getVersion',
         'javascript' => 'getJavascript',
@@ -316,6 +320,12 @@ class PrinceOptions implements ArrayAccess
     protected $disallow_modify;
 
     /**
+      * $debug Enable Prince debug mode.
+      * @var bool
+      */
+    protected $debug;
+
+    /**
       * $input Specify the input format.
       * @var string
       */
@@ -375,6 +385,7 @@ class PrinceOptions implements ArrayAccess
             $this->disallow_copy = $data["disallow_copy"];
             $this->disallow_annotate = $data["disallow_annotate"];
             $this->disallow_modify = $data["disallow_modify"];
+            $this->debug = $data["debug"];
             $this->input = $data["input"];
             $this->version = $data["version"];
             $this->javascript = $data["javascript"];
@@ -842,6 +853,27 @@ class PrinceOptions implements ArrayAccess
     {
 
         $this->disallow_modify = $disallow_modify;
+        return $this;
+    }
+
+    /**
+     * Gets debug
+     * @return bool
+     */
+    public function getDebug()
+    {
+        return $this->debug;
+    }
+
+    /**
+     * Sets debug
+     * @param bool $debug Enable Prince debug mode.
+     * @return $this
+     */
+    public function setDebug($debug)
+    {
+
+        $this->debug = $debug;
         return $this;
     }
 
