@@ -66,9 +66,6 @@ Stuck? We're experts at using DocRaptor so please [email our support team](mailt
 
 The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language php`.
 
-The generated client needed a few fixes
-- String returned instead of ByteArray
-
 
 ## Release Process
 
