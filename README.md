@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/DocRaptor/docraptor-php.svg?branch=master)](https://travis-ci.org/DocRaptor/docraptor-php)
+
 # DocRaptor PHP Native Client Library
 
 This is a PHP package for using [DocRaptor API](https://docraptor.com/documentation) to convert [HTML to PDF and XLSX](https://docraptor.com).
