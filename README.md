@@ -39,7 +39,7 @@ $doc->setDocumentContent("<html><body>Hello World</body></html>");     // supply
 $doc->setName("docraptor-php.pdf");                                    // help you find a document later
 $doc->setDocumentType("pdf");                                          // pdf or xls or xlsx
 // $doc->setJavascript(true);                                          // enable JavaScript processing
-// $prince_options = new PrinceOptions();                              // pdf-specific options
+// $prince_options = new DocRaptor\PrinceOptions();                    // pdf-specific options
 // $doc->setPrinceOptions($prince_options)
 // $prince_options->setMedia("screen");                                // use screen styles instead of print styles
 // $prince_options->setBaseurl("http://hello.com");                    // pretend URL when using document_content
