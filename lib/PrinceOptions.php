@@ -54,6 +54,7 @@ class PrinceOptions implements ArrayAccess
         'baseurl' => 'string',
         'no_xinclude' => 'bool',
         'no_network' => 'bool',
+        'no_parallel_downloads' => 'bool',
         'http_user' => 'string',
         'http_password' => 'string',
         'http_proxy' => 'string',
@@ -89,6 +90,7 @@ class PrinceOptions implements ArrayAccess
         'baseurl' => 'baseurl',
         'no_xinclude' => 'no_xinclude',
         'no_network' => 'no_network',
+        'no_parallel_downloads' => 'no_parallel_downloads',
         'http_user' => 'http_user',
         'http_password' => 'http_password',
         'http_proxy' => 'http_proxy',
@@ -124,6 +126,7 @@ class PrinceOptions implements ArrayAccess
         'baseurl' => 'setBaseurl',
         'no_xinclude' => 'setNoXinclude',
         'no_network' => 'setNoNetwork',
+        'no_parallel_downloads' => 'setNoParallelDownloads',
         'http_user' => 'setHttpUser',
         'http_password' => 'setHttpPassword',
         'http_proxy' => 'setHttpProxy',
@@ -159,6 +162,7 @@ class PrinceOptions implements ArrayAccess
         'baseurl' => 'getBaseurl',
         'no_xinclude' => 'getNoXinclude',
         'no_network' => 'getNoNetwork',
+        'no_parallel_downloads' => 'getNoParallelDownloads',
         'http_user' => 'getHttpUser',
         'http_password' => 'getHttpPassword',
         'http_proxy' => 'getHttpProxy',
@@ -204,6 +208,12 @@ class PrinceOptions implements ArrayAccess
       * @var bool
       */
     protected $no_network;
+
+    /**
+      * $no_parallel_downloads Disable parallel downloads.
+      * @var bool
+      */
+    protected $no_parallel_downloads;
 
     /**
       * $http_user Set the user for HTTP authentication.
@@ -366,6 +376,7 @@ class PrinceOptions implements ArrayAccess
             $this->baseurl = $data["baseurl"];
             $this->no_xinclude = $data["no_xinclude"];
             $this->no_network = $data["no_network"];
+            $this->no_parallel_downloads = $data["no_parallel_downloads"];
             $this->http_user = $data["http_user"];
             $this->http_password = $data["http_password"];
             $this->http_proxy = $data["http_proxy"];
@@ -454,6 +465,27 @@ class PrinceOptions implements ArrayAccess
     {
 
         $this->no_network = $no_network;
+        return $this;
+    }
+
+    /**
+     * Gets no_parallel_downloads
+     * @return bool
+     */
+    public function getNoParallelDownloads()
+    {
+        return $this->no_parallel_downloads;
+    }
+
+    /**
+     * Sets no_parallel_downloads
+     * @param bool $no_parallel_downloads Disable parallel downloads.
+     * @return $this
+     */
+    public function setNoParallelDownloads($no_parallel_downloads)
+    {
+
+        $this->no_parallel_downloads = $no_parallel_downloads;
         return $this;
     }
 
