@@ -210,7 +210,7 @@ class PrinceOptions implements ArrayAccess
     protected $no_network;
 
     /**
-      * $no_parallel_downloads Disable parallel downloads.
+      * $no_parallel_downloads Disables parallel fetching of assets during PDF creation. Useful if your asset host has strict rate limiting.
       * @var bool
       */
     protected $no_parallel_downloads;
@@ -479,7 +479,7 @@ class PrinceOptions implements ArrayAccess
 
     /**
      * Sets no_parallel_downloads
-     * @param bool $no_parallel_downloads Disable parallel downloads.
+     * @param bool $no_parallel_downloads Disables parallel fetching of assets during PDF creation. Useful if your asset host has strict rate limiting.
      * @return $this
      */
     public function setNoParallelDownloads($no_parallel_downloads)
