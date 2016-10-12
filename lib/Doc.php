@@ -51,6 +51,7 @@ class Doc implements ArrayAccess
       * @var string[]
       */
     static $swaggerTypes = array(
+        'pipeline' => 'string',
         'name' => 'string',
         'document_type' => 'string',
         'document_content' => 'string',
@@ -71,6 +72,7 @@ class Doc implements ArrayAccess
       * @var string[]
       */
     static $attributeMap = array(
+        'pipeline' => 'pipeline',
         'name' => 'name',
         'document_type' => 'document_type',
         'document_content' => 'document_content',
@@ -91,6 +93,7 @@ class Doc implements ArrayAccess
       * @var string[]
       */
     static $setters = array(
+        'pipeline' => 'setPipeline',
         'name' => 'setName',
         'document_type' => 'setDocumentType',
         'document_content' => 'setDocumentContent',
@@ -111,6 +114,7 @@ class Doc implements ArrayAccess
       * @var string[]
       */
     static $getters = array(
+        'pipeline' => 'getPipeline',
         'name' => 'getName',
         'document_type' => 'getDocumentType',
         'document_content' => 'getDocumentContent',
@@ -126,6 +130,12 @@ class Doc implements ArrayAccess
         'prince_options' => 'getPrinceOptions'
     );
 
+
+    /**
+      * $pipeline Specify a specific verison of the DocRaptor Pipeline to use.
+      * @var string
+      */
+    protected $pipeline;
 
     /**
       * $name A name for identifying your document.
@@ -213,6 +223,7 @@ class Doc implements ArrayAccess
     public function __construct(array $data = null)
     {
         if ($data != null) {
+            $this->pipeline = $data["pipeline"];
             $this->name = $data["name"];
             $this->document_type = $data["document_type"];
             $this->document_content = $data["document_content"];
@@ -227,6 +238,27 @@ class Doc implements ArrayAccess
             $this->callback_url = $data["callback_url"];
             $this->prince_options = $data["prince_options"];
         }
+    }
+
+    /**
+     * Gets pipeline
+     * @return string
+     */
+    public function getPipeline()
+    {
+        return $this->pipeline;
+    }
+
+    /**
+     * Sets pipeline
+     * @param string $pipeline Specify a specific verison of the DocRaptor Pipeline to use.
+     * @return $this
+     */
+    public function setPipeline($pipeline)
+    {
+
+        $this->pipeline = $pipeline;
+        return $this;
     }
 
     /**
