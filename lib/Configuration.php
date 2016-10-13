@@ -516,7 +516,7 @@ class Configuration
         $report  = "PHP SDK (DocRaptor) Debug Report:\n";
         $report .= "    OS: ".php_uname()."\n";
         $report .= "    PHP Version: ".phpversion()."\n";
-        $report .= "    OpenAPI Spec Version: 1.1.0\n";
+        $report .= "    OpenAPI Spec Version: 1.2.0\n";
         $report .= "    SDK Package Version: 0.4.0\n";
         $report .= "    Temp Folder Path: ".self::getDefaultConfiguration()->getTempFolderPath()."\n";
 
