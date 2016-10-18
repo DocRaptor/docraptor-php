@@ -13,7 +13,6 @@ $docraptor = new DocRaptor\DocApi();
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);
 $doc->setDocumentContent("<html><body>Hello World</body></html>");
-$doc->setName("docraptor-php.pdf");
 $doc->setDocumentType("pdf");
 $create_response = $docraptor->createDoc($doc);
 
