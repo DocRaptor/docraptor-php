@@ -9,6 +9,6 @@ $docraptor = new DocRaptor\DocApi();
 $doc = new DocRaptor\Doc();
 $doc->setName("php-xlsx.xlsx");
 $doc->setTest(true);
-$doc->setDocumentType("xlsx");
+$doc->setType("xlsx");
 $doc->setDocumentContent("<html><body><table><tr><td>Hello from PHP</td></tr></table></body></html>");
 $docraptor->createDoc($doc);
