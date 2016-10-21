@@ -9,7 +9,7 @@ $docraptor = new DocRaptor\DocApi();
 $doc = new DocRaptor\Doc();
 $doc->setName("php-async.pdf");
 $doc->setTest(true);
-$doc->setDocumentType("pdf");
+$doc->setType("pdf");
 $doc->setDocumentContent("<html><body>Hello from PHP</body></html>");
 $response = $docraptor->createAsyncDoc($doc);
 

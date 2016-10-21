@@ -13,7 +13,7 @@ $docraptor = new DocRaptor\DocApi();
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);
 $doc->setDocumentContent("<html><body>Hello World</body></html>");
-$doc->setDocumentType("pdf");
+$doc->setType("pdf");
 $create_response = $docraptor->createDoc($doc);
 
 header('Content-Description: File Transfer');

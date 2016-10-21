@@ -25,7 +25,7 @@ try {
   $doc->setTest(true);                                                   # test documents are free but watermarked
   $doc->setDocumentContent("<html><body>Hello World</body></html>");     # supply content directly
   # $doc->setDocumentUrl("http://docraptor.com/examples/invoice.html");  # or use a url
-  $doc->setDocumentType("pdf");                                          # pdf or xls or xlsx
+  $doc->setType("pdf");                                                  # pdf or xls or xlsx
   # $doc->setJavascript(true);                                           # enable JavaScript processing
   # $prince_options = new DocRaptor\PrinceOptions();
   # $doc->setPrinceOptions($prince_options)

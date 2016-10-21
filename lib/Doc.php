@@ -53,7 +53,7 @@ class Doc implements ArrayAccess
     static $swaggerTypes = array(
         'pipeline' => 'string',
         'name' => 'string',
-        'document_type' => 'string',
+        'type' => 'string',
         'document_content' => 'string',
         'document_url' => 'string',
         'test' => 'bool',
@@ -74,7 +74,7 @@ class Doc implements ArrayAccess
     static $attributeMap = array(
         'pipeline' => 'pipeline',
         'name' => 'name',
-        'document_type' => 'document_type',
+        'type' => 'type',
         'document_content' => 'document_content',
         'document_url' => 'document_url',
         'test' => 'test',
@@ -95,7 +95,7 @@ class Doc implements ArrayAccess
     static $setters = array(
         'pipeline' => 'setPipeline',
         'name' => 'setName',
-        'document_type' => 'setDocumentType',
+        'type' => 'setType',
         'document_content' => 'setDocumentContent',
         'document_url' => 'setDocumentUrl',
         'test' => 'setTest',
@@ -116,7 +116,7 @@ class Doc implements ArrayAccess
     static $getters = array(
         'pipeline' => 'getPipeline',
         'name' => 'getName',
-        'document_type' => 'getDocumentType',
+        'type' => 'getType',
         'document_content' => 'getDocumentContent',
         'document_url' => 'getDocumentUrl',
         'test' => 'getTest',
@@ -144,10 +144,10 @@ class Doc implements ArrayAccess
     protected $name;
 
     /**
-      * $document_type The type of document being created.
+      * $type The kind of document being created.
       * @var string
       */
-    protected $document_type;
+    protected $type;
 
     /**
       * $document_content The HTML data to be transformed into a document. You must supply content using document_content or document_url.
@@ -225,7 +225,7 @@ class Doc implements ArrayAccess
         if ($data != null) {
             $this->pipeline = $data["pipeline"];
             $this->name = $data["name"];
-            $this->document_type = $data["document_type"];
+            $this->type = $data["type"];
             $this->document_content = $data["document_content"];
             $this->document_url = $data["document_url"];
             $this->test = $data["test"];
@@ -283,26 +283,26 @@ class Doc implements ArrayAccess
     }
 
     /**
-     * Gets document_type
+     * Gets type
      * @return string
      */
-    public function getDocumentType()
+    public function getType()
     {
-        return $this->document_type;
+        return $this->type;
     }
 
     /**
-     * Sets document_type
-     * @param string $document_type The type of document being created.
+     * Sets type
+     * @param string $type The kind of document being created.
      * @return $this
      */
-    public function setDocumentType($document_type)
+    public function setType($type)
     {
         $allowed_values = array("pdf", "xls", "xlsx");
-        if (!in_array($document_type, $allowed_values)) {
-            throw new \InvalidArgumentException("Invalid value for 'document_type', must be one of 'pdf', 'xls', 'xlsx'");
+        if (!in_array($type, $allowed_values)) {
+            throw new \InvalidArgumentException("Invalid value for 'type', must be one of 'pdf', 'xls', 'xlsx'");
         }
-        $this->document_type = $document_type;
+        $this->type = $type;
         return $this;
     }
 
