@@ -110,7 +110,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = "PHP-Swagger/1.0.0";
+    protected $userAgent = "PHP-Swagger/1.1.0";
 
     /**
      * Debug switch (default set to false)
