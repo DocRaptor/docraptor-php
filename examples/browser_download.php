@@ -28,3 +28,4 @@ header('Content-Length: ' . strlen($create_response));
 ob_clean();
 flush();
 echo($create_response);
+exit;
