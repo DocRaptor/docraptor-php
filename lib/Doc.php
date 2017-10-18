@@ -62,6 +62,7 @@ class Doc implements ArrayAccess
         'tag' => 'string',
         'help' => 'bool',
         'javascript' => 'bool',
+        'ignore_console_messages' => 'bool',
         'referrer' => 'string',
         'callback_url' => 'string',
         'prince_options' => '\DocRaptor\PrinceOptions'
@@ -83,6 +84,7 @@ class Doc implements ArrayAccess
         'tag' => 'tag',
         'help' => 'help',
         'javascript' => 'javascript',
+        'ignore_console_messages' => 'ignore_console_messages',
         'referrer' => 'referrer',
         'callback_url' => 'callback_url',
         'prince_options' => 'prince_options'
@@ -104,6 +106,7 @@ class Doc implements ArrayAccess
         'tag' => 'setTag',
         'help' => 'setHelp',
         'javascript' => 'setJavascript',
+        'ignore_console_messages' => 'setIgnoreConsoleMessages',
         'referrer' => 'setReferrer',
         'callback_url' => 'setCallbackUrl',
         'prince_options' => 'setPrinceOptions'
@@ -125,6 +128,7 @@ class Doc implements ArrayAccess
         'tag' => 'getTag',
         'help' => 'getHelp',
         'javascript' => 'getJavascript',
+        'ignore_console_messages' => 'getIgnoreConsoleMessages',
         'referrer' => 'getReferrer',
         'callback_url' => 'getCallbackUrl',
         'prince_options' => 'getPrinceOptions'
@@ -198,6 +202,12 @@ class Doc implements ArrayAccess
     protected $javascript = false;
 
     /**
+      * $ignore_console_messages Whether to ignore console messages or not. By default any calls to console.log() will halt PDF generation and cause an error message to be returned.
+      * @var bool
+      */
+    protected $ignore_console_messages = false;
+
+    /**
       * $referrer Set HTTP referrer when generating this document.
       * @var string
       */
@@ -234,6 +244,7 @@ class Doc implements ArrayAccess
             $this->tag = $data["tag"];
             $this->help = $data["help"];
             $this->javascript = $data["javascript"];
+            $this->ignore_console_messages = $data['ignore_console_messages'];
             $this->referrer = $data["referrer"];
             $this->callback_url = $data["callback_url"];
             $this->prince_options = $data["prince_options"];
@@ -474,6 +485,27 @@ class Doc implements ArrayAccess
     {
 
         $this->javascript = $javascript;
+        return $this;
+    }
+
+    /**
+     * Gets ignore_console_messages
+     * @return bool
+     */
+    public function getIgnoreConsoleMessages()
+    {
+        return $this->ignore_console_messages;
+    }
+
+    /**
+     * Sets ignore_console_messages
+     * @param bool ignore_console_messages Whether to ignore console messages or not. By default any calls to console.log() will halt PDF generation and cause an error message to be returned.
+     * @return $this
+     */
+    public function setIgnoreConsoleMessages($ignore_console_messages)
+    {
+
+        $this->ignore_console_messages = $ignore_console_messages;
         return $this;
     }
 
