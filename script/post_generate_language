@@ -4,3 +4,9 @@ cd "$(dirname "$0")/.."
 
 echo "Removing trailing whitespace..."
 find lib -name "*.php" -type f -exec sed -E -i '' 's/[[:space:]]+$//g' {} +
+
+# for reasons unclear there was a change between swagger 2.1 and 2.2 that causes
+# some, but not all namespaces to be doubled up.
+# There's some info here: https://github.com/swagger-api/swagger-codegen/pull/4633
+echo "Undoing double namespaces..."
+find lib -name "*.php" -type f -exec sed -E -i '' 's/DocRaptor\\DocRaptor/DocRaptor/g' {} +
