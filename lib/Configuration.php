@@ -109,7 +109,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'Swagger-Codegen/1.3.0/php';
+    protected $userAgent = 'PHP-Swagger/1.3.0';
 
     /**
      * Debug switch (default set to false)

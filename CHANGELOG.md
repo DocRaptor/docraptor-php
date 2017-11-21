@@ -1,3 +1,7 @@
+### 1.3.0 [November 21, 2017]
+* Upgrade to new swagger generation version (v2.2.3)
+* Added support for `prince_options[pdf_title]` and `ignore_console_messages` options
+
 ### 1.1.0 [November 3, 2016]
 * Added support for the pipeline API parameter
 
