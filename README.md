@@ -80,7 +80,7 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 5. Update [CHANGELOG.md](CHANGELOG.md)
 6. Commit "Release version vX.Y.Z"
 7. Push to GitHub
-8. Tag version: `git tag 'vX.Y.Z' && git push --tags` (GitHub webhook will tell packagist and release a new version)
+8. Tag version: `git tag 'vX.Y.Z' && git push --tags` (GitHub packagist integration will tell packagist to release a new version)
 9. Verify update on https://packagist.org/packages/docraptor/docraptor
 10. Refresh documentation on docraptor.com
 
@@ -88,3 +88,11 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 ## Version Policy
 
 This library follows [Semantic Versioning 2.0.0](http://semver.org).
+
+## Contributors
+
+* Joel Meador
+* Elijah Miller
+* James Paden
+* Jason Gladish
+* Nikola Nikolov
