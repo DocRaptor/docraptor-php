@@ -237,6 +237,9 @@ class ApiClient
         } else {
             curl_setopt($curl, CURLOPT_VERBOSE, 0);
         }
+        
+        // Release memory used for initilizing curl.
+        unset($postData);
 
         // obtain the HTTP response headers
         curl_setopt($curl, CURLOPT_HEADER, 1);
