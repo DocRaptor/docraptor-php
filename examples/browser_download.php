@@ -2,7 +2,7 @@
 # This example demonstrates creating a PDF using minimal options and sending
 # it to a browser as a download. For a more complete example see sync.php.
 #
-# You can run this example with: php browser_download.rb
+# You can run this example with: php browser_download.php
 
 require "../autoload.php";
 
