@@ -9,7 +9,7 @@
 # DocRaptor supports many options for output customization, the full list is
 # https://docraptor.com/documentation/api#api_general
 #
-# You can run this example with: php async.rb
+# You can run this example with: php async.php
 
 require "../autoload.php";
 
