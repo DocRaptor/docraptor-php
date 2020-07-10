@@ -1,10 +1,11 @@
 <?php
-require "../autoload.php";
+require "../vendor/autoload.php";
 
-$configuration = DocRaptor\Configuration::getDefaultConfiguration();
+$configuration = new DocRaptor\Configuration();
 $configuration->setUsername("YOUR_API_KEY_HERE");
 # $configuration->setDebug(true);
-$docraptor = new DocRaptor\DocApi();
+
+$docraptor = new DocRaptor\DocApi(null, $configuration);
 
 $doc = new DocRaptor\Doc();
 $doc->setName(str_repeat("s", 201)); # limit is 200 characters

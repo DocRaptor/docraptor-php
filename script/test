@@ -6,8 +6,6 @@ cd "$(dirname "$0")/.."
 which php > /dev/null      || (echo "php must be installed"; exit 1)
 which composer > /dev/null || (echo "composer must be installed"; exit 1)
 
-composer install
-
 cd test
 
 # runs a test file with PASS/FAIL message
