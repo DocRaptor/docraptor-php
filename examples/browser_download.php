@@ -4,11 +4,13 @@
 #
 # You can run this example with: php browser_download.php
 
-require "../autoload.php";
+require "../vendor/autoload.php";
 
-$configuration = DocRaptor\Configuration::getDefaultConfiguration();
+$configuration = new DocRaptor\Configuration();
 $configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
-$docraptor = new DocRaptor\DocApi();
+# $configuration->setDebug(true);
+
+$docraptor = new DocRaptor\DocApi(null, $configuration);
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);
