@@ -57,12 +57,12 @@ class Doc implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'pipeline' => 'string',
         'name' => 'string',
         'document_type' => 'string',
         'document_content' => 'string',
         'document_url' => 'string',
         'test' => 'bool',
+        'pipeline' => 'string',
         'strict' => 'string',
         'ignore_resource_errors' => 'bool',
         'ignore_console_messages' => 'bool',
@@ -82,12 +82,12 @@ class Doc implements ModelInterface, ArrayAccess
       * @var string[]
       */
     protected static $swaggerFormats = [
-        'pipeline' => null,
         'name' => null,
         'document_type' => null,
         'document_content' => null,
         'document_url' => null,
         'test' => null,
+        'pipeline' => null,
         'strict' => null,
         'ignore_resource_errors' => null,
         'ignore_console_messages' => null,
@@ -128,12 +128,12 @@ class Doc implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'pipeline' => 'pipeline',
         'name' => 'name',
         'document_type' => 'document_type',
         'document_content' => 'document_content',
         'document_url' => 'document_url',
         'test' => 'test',
+        'pipeline' => 'pipeline',
         'strict' => 'strict',
         'ignore_resource_errors' => 'ignore_resource_errors',
         'ignore_console_messages' => 'ignore_console_messages',
@@ -153,12 +153,12 @@ class Doc implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'pipeline' => 'setPipeline',
         'name' => 'setName',
         'document_type' => 'setDocumentType',
         'document_content' => 'setDocumentContent',
         'document_url' => 'setDocumentUrl',
         'test' => 'setTest',
+        'pipeline' => 'setPipeline',
         'strict' => 'setStrict',
         'ignore_resource_errors' => 'setIgnoreResourceErrors',
         'ignore_console_messages' => 'setIgnoreConsoleMessages',
@@ -178,12 +178,12 @@ class Doc implements ModelInterface, ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'pipeline' => 'getPipeline',
         'name' => 'getName',
         'document_type' => 'getDocumentType',
         'document_content' => 'getDocumentContent',
         'document_url' => 'getDocumentUrl',
         'test' => 'getTest',
+        'pipeline' => 'getPipeline',
         'strict' => 'getStrict',
         'ignore_resource_errors' => 'getIgnoreResourceErrors',
         'ignore_console_messages' => 'getIgnoreConsoleMessages',
@@ -242,6 +242,7 @@ class Doc implements ModelInterface, ArrayAccess
     const DOCUMENT_TYPE_XLS = 'xls';
     const DOCUMENT_TYPE_XLSX = 'xlsx';
     const STRICT_NONE = 'none';
+    const STRICT_HTML = 'html';
 
 
 
@@ -268,6 +269,7 @@ class Doc implements ModelInterface, ArrayAccess
     {
         return [
             self::STRICT_NONE,
+            self::STRICT_HTML,
         ];
     }
 
@@ -287,13 +289,13 @@ class Doc implements ModelInterface, ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['pipeline'] = isset($data['pipeline']) ? $data['pipeline'] : null;
         $this->container['name'] = isset($data['name']) ? $data['name'] : null;
         $this->container['document_type'] = isset($data['document_type']) ? $data['document_type'] : null;
         $this->container['document_content'] = isset($data['document_content']) ? $data['document_content'] : null;
         $this->container['document_url'] = isset($data['document_url']) ? $data['document_url'] : null;
         $this->container['test'] = isset($data['test']) ? $data['test'] : true;
-        $this->container['strict'] = isset($data['strict']) ? $data['strict'] : 'none';
+        $this->container['pipeline'] = isset($data['pipeline']) ? $data['pipeline'] : null;
+        $this->container['strict'] = isset($data['strict']) ? $data['strict'] : null;
         $this->container['ignore_resource_errors'] = isset($data['ignore_resource_errors']) ? $data['ignore_resource_errors'] : true;
         $this->container['ignore_console_messages'] = isset($data['ignore_console_messages']) ? $data['ignore_console_messages'] : false;
         $this->container['tag'] = isset($data['tag']) ? $data['tag'] : null;
@@ -354,30 +356,6 @@ class Doc implements ModelInterface, ArrayAccess
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets pipeline
-     *
-     * @return string
-     */
-    public function getPipeline()
-    {
-        return $this->container['pipeline'];
-    }
-
-    /**
-     * Sets pipeline
-     *
-     * @param string $pipeline Specify a specific verison of the DocRaptor Pipeline to use.
-     *
-     * @return $this
-     */
-    public function setPipeline($pipeline)
-    {
-        $this->container['pipeline'] = $pipeline;
-
-        return $this;
-    }
 
     /**
      * Gets name
@@ -504,6 +482,30 @@ class Doc implements ModelInterface, ArrayAccess
     public function setTest($test)
     {
         $this->container['test'] = $test;
+
+        return $this;
+    }
+
+    /**
+     * Gets pipeline
+     *
+     * @return string
+     */
+    public function getPipeline()
+    {
+        return $this->container['pipeline'];
+    }
+
+    /**
+     * Sets pipeline
+     *
+     * @param string $pipeline Specify a specific verison of the DocRaptor Pipeline to use.
+     *
+     * @return $this
+     */
+    public function setPipeline($pipeline)
+    {
+        $this->container['pipeline'] = $pipeline;
 
         return $this;
     }
