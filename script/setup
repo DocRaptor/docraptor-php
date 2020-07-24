@@ -2,5 +2,9 @@
 set -e
 cd "$(dirname "$0")/.."
 
-(php -v | grep 'PHP 7.2') || brew install php@7.2
+if ! (php -v | grep 'PHP 7.2'); then
+  brew install php@7.2
+  echo -e "\033[1;33mWarning:\033[0m We have to link php@7.2"
+  brew link php@7.2 --overwrite --force
+fi
 which composer || brew install composer
