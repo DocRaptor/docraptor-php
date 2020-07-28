@@ -1,5 +1,5 @@
 <?php
-require "../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
 $api_key = file_get_contents("../.docraptor_key");
 
@@ -7,11 +7,9 @@ if (!$api_key) {
   throw new Exception("Please put a valid (paid plan) api key in the .docraptor_key file when testing this feature.");
 }
 
-$configuration = new DocRaptor\Configuration();
-$configuration->setUsername($api_key);
-// $configuration->setDebug(true);
-
-$docraptor = new DocRaptor\DocApi(null, $configuration);
+$docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername($api_key);
+// $docraptor->getConfig()->setDebug(true);
 
 $doc = new DocRaptor\Doc();
 $doc->setName("php-hosted-async.pdf");

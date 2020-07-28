@@ -1,11 +1,9 @@
 <?php
-require "../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
-$configuration = new DocRaptor\Configuration();
-$configuration->setUsername("YOUR_API_KEY_HERE");
-# $configuration->setDebug(true);
-
-$docraptor = new DocRaptor\DocApi(null, $configuration);
+$docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
+// $docraptor->getConfig()->setDebug(true);
 
 $doc = new DocRaptor\Doc();
 $doc->setName("php-xlsx.xlsx");

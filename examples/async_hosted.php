@@ -18,13 +18,11 @@
 # https://docraptor.com/documentation/api#api_general
 #
 # You can run this example with: php async.rb
-require "../vendor/autoload.php";
+require __DIR__."/../vendor/autoload.php";
 
-$configuration = new DocRaptor\Configuration();
-$configuration->setUsername("<insert api key here>"); # you will need a real api key to test hosted documents
+$docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE"); # you will need a real api key to test hosted documents
 # $configuration->setDebug(true);
-
-$docraptor = new DocRaptor\DocApi(null, $configuration);
 
 try {
   $doc = new DocRaptor\Doc();
