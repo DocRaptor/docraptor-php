@@ -1651,7 +1651,7 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \DocRaptor\AsyncDocStatus
+     * @return \DocRaptor\DocStatus
      */
     public function getAsyncDocStatus($id)
     {
@@ -1666,11 +1666,11 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \DocRaptor\AsyncDocStatus, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \DocRaptor\DocStatus, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAsyncDocStatusWithHttpInfo($id)
     {
-        $returnType = '\DocRaptor\AsyncDocStatus';
+        $returnType = '\DocRaptor\DocStatus';
         $request = $this->getAsyncDocStatusRequest($id);
 
         try {
@@ -1722,7 +1722,7 @@ class DocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\DocRaptor\AsyncDocStatus',
+                        '\DocRaptor\DocStatus',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1764,7 +1764,7 @@ class DocApi
      */
     public function getAsyncDocStatusAsyncWithHttpInfo($id)
     {
-        $returnType = '\DocRaptor\AsyncDocStatus';
+        $returnType = '\DocRaptor\DocStatus';
         $request = $this->getAsyncDocStatusRequest($id);
 
         return $this->client
