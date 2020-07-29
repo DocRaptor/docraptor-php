@@ -1,7 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 
-$api_key = file_get_contents("../.docraptor_key");
+$api_key = trim(file_get_contents("../.docraptor_key"));
 
 if (!$api_key) {
   throw new Exception("Please put a valid (paid plan) api key in the .docraptor_key file when testing this feature.");
