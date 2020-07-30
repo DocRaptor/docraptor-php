@@ -1,6 +1,6 @@
 {
     "name": "docraptor/docraptor",
-    "version": "1.3.0",
+    "version": "2.0.0",
     "description": "A wrapper for the DocRaptor HTML to PDF/XLS service.",
     "keywords": [
         "docraptor",
