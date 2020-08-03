@@ -16,10 +16,9 @@ composer require docraptor/docraptor
 See [examples](examples/) for runnable examples with file output, error handling, etc.
 
 ```php
-$configuration = DocRaptor\Configuration::getDefaultConfiguration();
-$configuration->setUsername("YOUR_API_KEY_HERE"); // this key works for test documents
-// $configuration->setDebug(true);
 $docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");             // this key works for test documents
+// $docraptor->getConfig()->setDebug(true);
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);                                                   // test documents are free but watermarked
