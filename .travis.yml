@@ -1,14 +1,17 @@
 language: php
+dist: trusty
 sudo: false
 php:
-  - 5.4
   - 5.5
   - 5.6
   - 7.0
-  - hhvm
+  - 7.2
 script:
   - script/test
 before_install:
   - composer self-update --no-interaction
 before_script:
   - composer install --no-interaction
+env:
+  global:
+    secure: 27gDt6egUJRTUlr0h8AKyaWkScLAiVf0HYILnGTK1yKI99+8TBG2J24d4jCdstyucjBPA8s4EuHqaIxKgavPXtzMeAlofXqUmCCuwrNl2hXKje2RUQbuMtNWRWN0asOt1Vb+z8YdbgAsp7hFPzOrVrwTmqWqEMOwhiLrnPEL1TNarNRH491s6+G8ga/6j4gjGMl3KgOodIjKd/b1D2BvwkOjZtiKmKwjouA/fiCeRMdttn/+/DW4PxofDf0XsUfEpm6ChjcBRxy3vlw015SwNY62Zs1eD1ms1I+SBPjvjhHjBpxysEvDjQrhZgcLrJOv3ZZYfsOHhCLYjjoeWzZwoNqM/HnIWADPqRQNRTpLQ9eU4BU9eMJZynqTOvNICN0lD/9lK57LbLQ4D3YO79kHknVE/xsAianByZ0kZ9texYLOQN+/5BHsWmngVPBcwyIz2r1sThVOSnW9vgiKzUISQRcBVmKxYpzZVPhkzYS7HEgMLUbNnM96/1HV6ETloBkSL3IpL6N55YBK5kGEybxApWxx1DaJbGsPldvaYz5dmuUD0anbKgOkoHF48sjl+IsY7Y/3MZn9DE7hMIAEcwcWElqAKfextF6QFcv1VgDVoofaCFTvG1AxutXWSzUc5FbW2MJSU+HjEtzSFhxQ4/uIFo6QOtvt+0hdPWAcj0LKVPI=

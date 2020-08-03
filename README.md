@@ -11,17 +11,6 @@ This is a PHP package for using [DocRaptor API](https://docraptor.com/documentat
 composer require docraptor/docraptor
 ```
 
-## Manual Installation
-
-If you do not wish to use Composer, you can download the [latest
-release](https://github.com/docraptor/docraptor-php/releases), unzip in your project and require `autoload.php`.
-
-
-```php
-require_once('/path/to/docraptor-php/autoload.php');
-```
-
-
 ## Usage
 
 See [examples](examples/) for runnable examples with file output, error handling, etc.

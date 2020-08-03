@@ -1,3 +1,9 @@
+### 2.0.0 [July 31, 2020]
+* add support for hosted documents
+* upgrade to latest swagger 2.4.14
+* composer is now used to manage dependencies
+* **BREAKING CHANGE**: configuration change
+
 ### 1.3.0 [November 21, 2017]
 * Upgrade to new swagger generation version (v2.2.3)
 * Added support for `prince_options[pdf_title]` and `ignore_console_messages` options

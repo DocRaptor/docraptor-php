@@ -3,12 +3,11 @@
 # it to a browser as a download. For a more complete example see sync.php.
 #
 # You can run this example with: php browser_download.php
+require __DIR__."/../vendor/autoload.php";
 
-require "../autoload.php";
-
-$configuration = DocRaptor\Configuration::getDefaultConfiguration();
-$configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
 $docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
+# $docraptor->getConfig()->setDebug(true);
 
 $doc = new DocRaptor\Doc();
 $doc->setTest(true);

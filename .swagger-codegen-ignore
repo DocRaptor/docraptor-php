@@ -30,3 +30,4 @@ docs/
 .gitignore
 LICENSE
 Rakefile
+.travis.yml

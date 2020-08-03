@@ -11,13 +11,11 @@
 # https://docraptor.com/documentation/api#api_general
 #
 # You can run this example with: php sync.php
+require __DIR__."/../vendor/autoload.php";
 
-require "../autoload.php";
-
-$configuration = DocRaptor\Configuration::getDefaultConfiguration();
-$configuration->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
-# $configuration->setDebug(true);
 $docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE"); # this key works for test documents
+# $docraptor->getConfig()->setDebug(true);
 
 try {
 
