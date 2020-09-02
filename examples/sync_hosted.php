@@ -21,7 +21,7 @@
 require __DIR__."/../vendor/autoload.php";
 
 $docraptor = new DocRaptor\DocApi();
-$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE"); # you will need a real api key to test hosted documents
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
 # $configuration->setDebug(true);
 
 try {
