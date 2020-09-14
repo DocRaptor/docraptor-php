@@ -21,7 +21,7 @@
 require __DIR__."/../vendor/autoload.php";
 
 $docraptor = new DocRaptor\DocApi();
-$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE"); # you will need a real api key to test hosted documents
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
 # $configuration->setDebug(true);
 
 try {
@@ -40,11 +40,6 @@ try {
   $status_response = $docraptor->createHostedDoc($doc);
 
   echo "Document available for public download at: " . $status_response->getDownloadUrl() . "\n";
-
-  $file = fopen("/tmp/docraptor-hosted-php.pdf", "wb");
-  fwrite($file, file_get_contents($status_response->getDownloadUrl()));
-  fclose($file);
-  echo "Wrote PDF to /tmp/docraptor-hosted-php.pdf\n";
 
 } catch (DocRaptor\ApiException $error) {
   echo $error . "\n";
