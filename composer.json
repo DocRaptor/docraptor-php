@@ -1,37 +1,40 @@
 {
     "name": "docraptor/docraptor",
     "version": "2.0.0",
-    "description": "A wrapper for the DocRaptor HTML to PDF/XLS service.",
+    "description": "A native client library for the DocRaptor HTML to PDF/XLS service.",
     "keywords": [
-        "docraptor",
-        "api",
-        "pdf",
-        "xls",
-        "xlsx",
-        "html"
+        "openapitools",
+        "openapi-generator",
+        "openapi",
+        "php",
+        "sdk",
+        "rest",
+        "api"
     ],
-    "homepage": "https://github.com/docraptor/docraptor-php",
-    "license": "MIT",
+    "homepage": "https://openapi-generator.tech",
+    "license": "unlicense",
     "authors": [
         {
-            "name": "Expected Behavior",
-            "homepage": "https://github.com/expectedbehavior"
+            "name": "OpenAPI-Generator contributors",
+            "homepage": "https://openapi-generator.tech"
         }
     ],
     "require": {
-        "php": ">=5.5",
+        "php": "^7.3 || ^8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^7.3",
+        "guzzlehttp/psr7": "^2.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "^8.0 || ^9.0",
+        "friendsofphp/php-cs-fixer": "^2.12"
     },
     "autoload": {
         "psr-4": { "DocRaptor\\" : "lib/" }
     },
     "autoload-dev": {
-        "psr-4": { "DocRaptor\\" : "test/" }
+        "psr-4": { "DocRaptor\\Test\\" : "test/" }
     }
 }

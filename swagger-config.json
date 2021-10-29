@@ -3,6 +3,7 @@
   "apiPackage": "DocRaptor",
   "invokerPackage": "DocRaptor",
   "packagePath": ".",
+  "packagePath": "docraptor/docraptor",
   "composerVendorName": "docraptor",
   "composerProjectName": "docraptor",
   "artifactVersion": "2.0.0"
