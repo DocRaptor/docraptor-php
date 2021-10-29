@@ -1,0 +1,13 @@
+.php_cs
+composer.json
+lib/ApiException.php
+lib/AsyncDoc.php
+lib/Configuration.php
+lib/Doc.php
+lib/DocApi.php
+lib/DocStatus.php
+lib/HeaderSelector.php
+lib/ModelInterface.php
+lib/ObjectSerializer.php
+lib/PrinceOptions.php
+phpunit.xml.dist
