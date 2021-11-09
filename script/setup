@@ -2,15 +2,12 @@
 set -e
 cd "$(dirname "$0")/.."
 
-if ! (php -v | grep 'PHP 7.2'); then
-  brew install php@7.2
-  if (which php); then
-    echo -e "\033[1;33mWarning:\033[0m Unlinking current php"
-    brew unlink php
-  fi
-  echo -e "\033[1;33mWarning:\033[0m Linking php@7.2"
-  brew link php@7.2 --overwrite --force
-fi
+brew_install() {
+  echo
+  echo "Installing $1..."
+  brew list $1 > /dev/null || brew install $1
+}
 
-which composer || brew install composer
+brew_install php
+brew_install composer
 composer install
