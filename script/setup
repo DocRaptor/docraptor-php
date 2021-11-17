@@ -2,12 +2,24 @@
 set -e
 cd "$(dirname "$0")/.."
 
+setup_echo() {
+  echo "[script/setup] $1"
+}
+
+setup_error() {
+  echo "[script/setup][ERROR] $1"
+}
+
 brew_install() {
-  echo
-  echo "Installing $1..."
+  setup_echo "Installing $1..."
   brew list $1 > /dev/null || brew install $1
 }
 
-brew_install php
-brew_install composer
-composer install
+brew_cask_install() {
+  setup_echo "Installing cask $1..."
+  brew list --cask $1 &> /dev/null || brew install --cask $1
+}
+
+brew_cask_install docker
+brew_install docker
+brew link --overwrite docker

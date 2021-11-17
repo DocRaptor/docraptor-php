@@ -2,21 +2,4 @@
 set -e
 cd "$(dirname "$0")/.."
 
-# check dependencies
-which php > /dev/null      || (echo "php must be installed"; exit 1)
-which composer > /dev/null || (echo "composer must be installed"; exit 1)
-
-cd test
-
-# runs a test file with PASS/FAIL message
-run_test() {
-  (php "$1" && echo "PASS $1") || (echo "FAIL $1"; exit 1)
-}
-
-if [ "$1" == "" ]; then
-  for test in *.php; do
-    run_test "$test"
-  done
-else
-  run_test "$1.php"
-fi
+docker run -it --mount type=bind,source="$(pwd)",target=/app php:8.0.12-zts-bullseye /app/script/inside_container/test
