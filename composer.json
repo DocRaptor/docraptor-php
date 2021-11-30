@@ -1,4 +1,5 @@
 {
+    "name": "docraptor/docraptor",
     "version": "3.0.0",
     "description": "A native client library for the DocRaptor HTML to PDF/XLS service.",
     "keywords": [
