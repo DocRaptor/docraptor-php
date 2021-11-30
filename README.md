@@ -70,6 +70,7 @@ This library follows [Semantic Versioning 2.0.0](http://semver.org).
 
 ## Contributors
 
+* Matthew Gordon
 * Joel Meador
 * Elijah Miller
 * James Paden
