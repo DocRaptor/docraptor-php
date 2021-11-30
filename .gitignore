@@ -4,3 +4,4 @@ swagger-codegen
 /vendor/
 composer.lock
 .docraptor_key
+tmp/*

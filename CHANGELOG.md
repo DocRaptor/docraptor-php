@@ -1,3 +1,12 @@
+### 3.0.0 [November 30, 2021]
+* Add support for Guzzle 7
+* Switch from Swagger to OpenApi 5.3.0 (required for Guzzle 7)
+
+The major version bump for this release is because of the change from
+Swagger to OpenApi. There is no intended change in functionality, but
+changing generators created a substantial changeset in the client
+code. Please see the commit message for more technical details.
+
 ### 2.0.0 [July 31, 2020]
 * add support for hosted documents
 * upgrade to latest swagger 2.4.14

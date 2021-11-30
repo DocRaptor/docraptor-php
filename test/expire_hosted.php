@@ -1,23 +1,32 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
+$test_name = basename(__FILE__, '.php');
 
 $docraptor = new DocRaptor\DocApi();
 $docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
 // $docraptor->getConfig()->setDebug(true);
 
 $doc = new DocRaptor\Doc();
-$doc->setName("php-hosted-sync.pdf");
+$doc->setName("php-" . $test_name . ".pdf");
 $doc->setTest(true);
 $doc->setDocumentType("pdf");
-$doc->setDocumentContent("<html><body>Hello from PHP</body></html>");
+$doc->setDocumentContent("<html><body>Hello from $test_name PHP</body></html>");
 
 $status_response = $docraptor->createHostedDoc($doc);
 $download_url = $status_response->getDownloadUrl();
 
-$document_download = file_get_contents($download_url);
+$downloaded_document = file_get_contents($download_url);
 
-if (strpos($document_download, "%PDF") != 0) {
+if (strpos($downloaded_document, "%PDF") != 0) {
   throw new Exception("Output was not a PDF");
+}
+
+$file = fopen("/tmp/" . $test_name . "_test.pdf", "wb");
+$bytes_written = fwrite($file, $downloaded_document);
+fclose($file);
+
+if ($bytes_written < 20000) {
+  throw new Exception("PDF is smaller than 20k, which often means it is blank");
 }
 
 $docraptor->expire($status_response->getDownloadId());

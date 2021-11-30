@@ -33,6 +33,7 @@ update() {
   fi
 
   get_upstream docraptor.yaml
+  get_upstream .generator-revision
 
   get_upstream script/swagger
   script/swagger # download repo, etc.

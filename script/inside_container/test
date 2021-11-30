@@ -2,6 +2,8 @@
 set -e
 cd "$(dirname "$0")/../.."
 
+rm -f tmp/*
+
 cd test
 
 # runs a test file with PASS/FAIL message

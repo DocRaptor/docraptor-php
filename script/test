@@ -2,4 +2,4 @@
 set -e
 cd "$(dirname "$0")/.."
 
-docker run -it --mount type=bind,source="$(pwd)",target=/app php:8.0.12-zts-bullseye /app/script/inside_container/test
+docker run -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)/tmp",target=/tmp php:8.0.12-zts-bullseye /app/script/inside_container/test
