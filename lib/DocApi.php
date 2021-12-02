@@ -392,7 +392,7 @@ class DocApi
     public function createDoc($doc)
     {
         list($response) = $this->createDocWithHttpInfo($doc);
-        return file_get_contents($response->getRealPath());
+        return file_get_contents($response->getPathname());
         // return $response;
     }
 
@@ -1410,7 +1410,7 @@ class DocApi
     public function getAsyncDoc($id)
     {
         list($response) = $this->getAsyncDocWithHttpInfo($id);
-        return file_get_contents($response->getRealPath());
+        return file_get_contents($response->getPathname());
         // return $response;
     }
 
