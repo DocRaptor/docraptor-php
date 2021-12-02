@@ -54,6 +54,7 @@ The majority of the code in this repo is generated using swagger-codegen on [doc
 2. Merge feature branch(es) into master
 3. `script/test`
 4. Increment version in code:
+  - `composer.json`
   - `swagger-config.json`
   - `lib/Configuration.php` (2 places)
 5. Update [CHANGELOG.md](CHANGELOG.md)
