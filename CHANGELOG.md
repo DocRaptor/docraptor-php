@@ -1,3 +1,6 @@
+### 3.0.1 [December 2, 2021]
+* Change uses of getRealPath to getPathname by request in #28
+
 ### 3.0.0 [November 30, 2021]
 * Add support for Guzzle 7
 * Switch from Swagger to OpenApi 5.3.0 (required for Guzzle 7)
