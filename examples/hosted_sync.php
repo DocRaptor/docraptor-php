@@ -16,30 +16,10 @@ try {
     # $prince_options->setMedia("print"); # @media 'screen' or 'print' CSS
     # $prince_options->setBaseurl("https://yoursite.com"); # the base URL for any relative URLs
 
-    # different method than the synchronous documents
-    $response = $docraptor->createAsyncDoc($doc);
+    # different method than the non-hosted documents
+    $response = $docraptor->createHostedDoc($doc);
 
-    $done = false;
-    while (!$done) {
-        $status_response = $docraptor->getAsyncDocStatus($response->getStatusId());
-        echo "doc status: " . $status_response->getStatus() . "\n";
-        switch ($status_response->getStatus()) {
-            case "completed":
-                $pdf = $docraptor->getAsyncDoc($status_response->getDownloadId());
-                # getAsyncDoc() returns a binary string
-                file_put_contents("docraptor-async.pdf", $pdf);
-                echo "Wrote PDF to docraptor-async.pdf\n";
-                $done = true;
-                break;
-            case "failed":
-                echo "FAILED\n";
-                echo $status_response;
-                $done = true;
-                break;
-            default:
-                sleep(1);
-        }
-    }
+    echo "The PDF is hosted at " . $response->getDownloadUrl() . "\n";
 } catch (DocRaptor\ApiException $error) {
     echo $error . "\n";
     echo $error->getMessage() . "\n";
