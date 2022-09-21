@@ -1,4 +1,4 @@
-.php_cs
+.php-cs-fixer.dist.php
 composer.json
 lib/ApiException.php
 lib/AsyncDoc.php
@@ -11,3 +11,8 @@ lib/ModelInterface.php
 lib/ObjectSerializer.php
 lib/PrinceOptions.php
 phpunit.xml.dist
+test/Api/DocApiTest.php
+test/Model/AsyncDocTest.php
+test/Model/DocStatusTest.php
+test/Model/DocTest.php
+test/Model/PrinceOptionsTest.php
