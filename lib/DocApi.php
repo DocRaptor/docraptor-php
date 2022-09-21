@@ -392,8 +392,9 @@ class DocApi
     public function createDoc($doc)
     {
         list($response) = $this->createDocWithHttpInfo($doc);
-        return file_get_contents($response->getPathname());
+        // Patch to preserve old behavior of returning binary data.
         // return $response;
+        return file_get_contents($response->getPathname());
     }
 
     /**
@@ -1410,8 +1411,9 @@ class DocApi
     public function getAsyncDoc($id)
     {
         list($response) = $this->getAsyncDocWithHttpInfo($id);
-        return file_get_contents($response->getPathname());
+        // Patch to preserve old behavior of returning binary data.
         // return $response;
+        return file_get_contents($response->getPathname());
     }
 
     /**
