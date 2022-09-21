@@ -2,7 +2,16 @@
 set -e
 cd "$(dirname "$0")/../.."
 
-rm -f tmp/*
+rm -rf tmp/*
+
+echo
+echo "Testing with (php -v):"
+php -v
+echo
+echo
+
+rm -f composer.lock
+composer install
 
 cd test
 

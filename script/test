@@ -2,4 +2,37 @@
 set -e
 cd "$(dirname "$0")/.."
 
-docker run -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)/tmp",target=/tmp php:8.0.12-zts-bullseye /app/script/inside_container/test
+run_tests() {
+  php_version=$1
+  docker run --pull=always -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)/tmp",target=/tmp cimg/php:${php_version} /app/script/inside_container/test
+}
+
+success="true"
+
+# Versions without patch numbers will test the latest patch version.
+for php_version in 7.4.30 7.4 8.0.22 8.0 8.1.9 8.1; do
+  {
+    echo
+    echo
+    echo "Testing php version $php_version" &&
+      run_tests $php_version
+  } || success="false"
+done
+
+if [ $success == "true" ]; then
+  tput bold    # bold text
+  tput setaf 2 # green text
+  echo "======================================"
+  echo "=              Passed                ="
+  echo "======================================"
+  tput sgr0    # reset to default text
+  exit 0
+else
+  tput bold    # bold text
+  tput setaf 1 # red text
+  echo "======================================"
+  echo "=              FAILED                ="
+  echo "======================================"
+  tput sgr0    # reset to default text
+  exit 1
+fi
