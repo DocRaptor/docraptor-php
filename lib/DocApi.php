@@ -396,14 +396,12 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return string
      */
     public function createDoc($doc)
     {
         list($response) = $this->createDocWithHttpInfo($doc);
-        // Patch to preserve old behavior of returning binary data.
-        // return $response;
-        return file_get_contents($response->getPathname());
+        return $response;
     }
 
     /**
@@ -413,7 +411,7 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function createDocWithHttpInfo($doc)
     {
@@ -456,23 +454,23 @@ class DocApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SplFileObject' !== 'string') {
+                        if ('string' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SplFileObject';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -493,7 +491,7 @@ class DocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -531,7 +529,7 @@ class DocApi
      */
     public function createDocAsyncWithHttpInfo($doc)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'string';
         $request = $this->createDocRequest($doc);
 
         return $this->client
@@ -1442,14 +1440,12 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \SplFileObject
+     * @return string
      */
     public function getAsyncDoc($id)
     {
         list($response) = $this->getAsyncDocWithHttpInfo($id);
-        // Patch to preserve old behavior of returning binary data.
-        // return $response;
-        return file_get_contents($response->getPathname());
+        return $response;
     }
 
     /**
@@ -1459,7 +1455,7 @@ class DocApi
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
+     * @return array of string, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAsyncDocWithHttpInfo($id)
     {
@@ -1502,23 +1498,23 @@ class DocApi
 
             switch($statusCode) {
                 case 200:
-                    if ('\SplFileObject' === '\SplFileObject') {
+                    if ('string' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\SplFileObject' !== 'string') {
+                        if ('string' !== 'string') {
                             $content = json_decode($content);
                         }
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\SplFileObject', []),
+                        ObjectSerializer::deserialize($content, 'string', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
             }
 
-            $returnType = '\SplFileObject';
+            $returnType = 'string';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -1539,7 +1535,7 @@ class DocApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\SplFileObject',
+                        'string',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1577,7 +1573,7 @@ class DocApi
      */
     public function getAsyncDocAsyncWithHttpInfo($id)
     {
-        $returnType = '\SplFileObject';
+        $returnType = 'string';
         $request = $this->getAsyncDocRequest($id);
 
         return $this->client

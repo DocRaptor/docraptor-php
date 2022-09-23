@@ -44,7 +44,7 @@ paths:
           description: Successful response
           schema:
             type: string
-            format: binary
+            format: byte
         400:
           description: Bad Request
         401:
@@ -198,7 +198,7 @@ paths:
           description: Successful response
           schema:
             type: string
-            format: binary
+            format: byte
         400:
           description: Bad Request
         403:
