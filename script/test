@@ -9,7 +9,10 @@ run_tests() {
 
 success="true"
 
-# Versions without patch numbers will test the latest patch version.
+# Versions without patch numbers will test the latest patch version. We include
+# specific patch versions to provide consistency. We include version numbers
+# without the patch version in order to automatically test the latest patch
+# version of each minor version.
 for php_version in 7.4.30 7.4 8.0.22 8.0 8.1.9 8.1; do
   {
     echo
