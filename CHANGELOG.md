@@ -1,3 +1,6 @@
+### 3.0.2 [September 27, 2022]
+* Fix PHP 8.1 deprecation issues
+
 ### 3.0.1 [December 2, 2021]
 * Change uses of getRealPath to getPathname by request in #28
 
