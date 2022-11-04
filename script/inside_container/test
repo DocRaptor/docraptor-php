@@ -2,8 +2,6 @@
 set -e
 cd "$(dirname "$0")/../.."
 
-rm -rf tmp/*
-
 echo
 echo "Testing with (php -v):"
 php -v

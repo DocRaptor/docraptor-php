@@ -2,6 +2,10 @@
 set -e
 cd "$(dirname "$0")/.."
 
+echo "Clearing test output directory"
+rm -rf tmp/test_output/
+mkdir -p tmp/test_output
+
 run_tests() {
   runtime_env="$1"
   if time script/docker -i "$runtime_env" /app/script/inside_container/test; then

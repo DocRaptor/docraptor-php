@@ -1,6 +1,7 @@
 <?php
 require __DIR__."/../vendor/autoload.php";
 $test_name = basename(__FILE__, '.php');
+$test_output_dir = dirname(__DIR__) . "/tmp/test_output/";
 
 $docraptor = new DocRaptor\DocApi();
 $docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
@@ -24,7 +25,7 @@ while (true) {
 
 $downloaded_document = $docraptor->getAsyncDoc($status_response->getDownloadId());
 
-$file = fopen("/tmp/" . $test_name . "_test.pdf", "wb");
+$file = fopen($test_output_dir . $test_name . "_php_" . phpversion() . ".pdf", "wb");
 $bytes_written = fwrite($file, $downloaded_document);
 fclose($file);
 
