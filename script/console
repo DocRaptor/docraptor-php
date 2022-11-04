@@ -2,4 +2,4 @@
 set -e
 cd "$(dirname "$0")/.."
 
-docker run -it --mount type=bind,source="$(pwd)",target=/app php:8.0.12-zts-bullseye /bin/bash
+script/docker "$@" /bin/bash

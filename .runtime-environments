@@ -1,0 +1,10 @@
+# Versions without patch numbers will test the latest patch version. We include
+# specific patch versions to provide consistency. We include version numbers
+# without the patch version in order to automatically test the latest patch
+# version of each minor version.
+cimg/php:7.4.30
+cimg/php:7.4
+cimg/php:8.0.22
+cimg/php:8.0
+cimg/php:8.1.9
+cimg/php:8.1

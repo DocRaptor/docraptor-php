@@ -3,23 +3,33 @@ set -e
 cd "$(dirname "$0")/.."
 
 run_tests() {
-  php_version=$1
-  docker run --pull=always -it --mount type=bind,source="$(pwd)",target=/app --mount type=bind,source="$(pwd)/tmp",target=/tmp cimg/php:${php_version} /app/script/inside_container/test
+  runtime_env="$1"
+  if time script/docker -i "$runtime_env" /app/script/inside_container/test; then
+    tput bold    # bold text
+    tput setaf 2 # green text
+    echo "======================================"
+    echo "$runtime_env Passed"
+    echo "======================================"
+    tput sgr0    # reset to default text
+    return 0
+  else
+    tput bold    # bold text
+    tput setaf 1 # red text
+    echo "======================================"
+    echo "$runtime_env FAILED"
+    echo "======================================"
+    tput sgr0    # reset to default text
+    return 1
+  fi
 }
 
 success="true"
 
-# Versions without patch numbers will test the latest patch version. We include
-# specific patch versions to provide consistency. We include version numbers
-# without the patch version in order to automatically test the latest patch
-# version of each minor version.
-for php_version in 7.4.30 7.4 8.0.22 8.0 8.1.9 8.1; do
-  {
-    echo
-    echo
-    echo "Testing php version $php_version" &&
-      run_tests $php_version
-  } || success="false"
+for runtime_env in $(cat .runtime-environments | grep -v '^#'); do
+  echo
+  echo
+  echo "Testing runtime env $runtime_env"
+  run_tests "$runtime_env" || success="false"
 done
 
 if [ $success == "true" ]; then
