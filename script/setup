@@ -12,7 +12,7 @@ setup_error() {
 
 brew_install() {
   setup_echo "Installing $1..."
-  brew list $1 > /dev/null || brew install $1
+  brew list --formula $1 > /dev/null || brew install --formula $1
 }
 
 brew_cask_install() {
@@ -22,4 +22,15 @@ brew_cask_install() {
 
 brew_cask_install docker
 brew_install docker
-brew link --overwrite docker
+
+# Avoid a warning message (vs. --overwrite)
+brew unlink docker && brew link docker
+
+tput bold    # bold text
+tput setaf 2 # green text
+setup_echo "****************************************************************"
+setup_echo "*                                                              *"
+setup_echo "*                         Good to go!                          *"
+setup_echo "*                                                              *"
+setup_echo "****************************************************************"
+tput sgr0    # reset to default text
