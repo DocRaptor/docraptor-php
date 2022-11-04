@@ -93,7 +93,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://docraptor.com';
+    protected $host = 'https://api.docraptor.com';
 
     /**
      * User agent of the HTTP request, set to "OpenAPI-Generator/{version}/PHP" by default
@@ -473,7 +473,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://docraptor.com",
+                "url" => "https://api.docraptor.com",
                 "description" => "No description provided",
             ]
         ];
