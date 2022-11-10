@@ -1,0 +1,4 @@
+# Ignore everything in tmp. Putting this here instead of /.gitignore to make it
+# easier to detect code generator differences in /.gitignore.
+*
+!.gitignore

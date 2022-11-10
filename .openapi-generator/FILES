@@ -1,4 +1,7 @@
+.gitignore
 .php-cs-fixer.dist.php
+.travis.yml
+README.md
 composer.json
 lib/ApiException.php
 lib/AsyncDoc.php
