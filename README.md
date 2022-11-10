@@ -42,10 +42,13 @@ $create_response = $docraptor->createDoc($doc);
 
 Stuck? We're experts at turning HTML into PDFs so please [email us](mailto:support@docraptor.com) if you run into trouble.
 
+## Requirements
+
+PHP 7.4+.
 
 ## Development
 
-The majority of the code in this repo is generated using swagger-codegen on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language php`.
+The majority of the code in this repo is generated using openapi-generator on [docraptor.yaml](docraptor.yaml). You can modify this file and regenerate the client using `script/generate_language`.
 
 
 ## Release Process
