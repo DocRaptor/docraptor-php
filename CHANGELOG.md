@@ -1,3 +1,7 @@
+### 4.0.0 [TBD]
+* Switch API host to more secure api.docraptor.com (dropping old TLS)
+* Require PHP 7.4+
+
 ### 3.0.2 [September 27, 2022]
 * Fix PHP 8.1 deprecation issues
 
