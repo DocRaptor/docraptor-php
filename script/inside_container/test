@@ -8,7 +8,17 @@ php -v
 echo
 echo
 
-rm -f composer.lock
+# Currently all the PHP versions work with the composer.lock file gnerated with
+# the oldest version of PHP. This means we don't need to regenerate the lock
+# file on each version. This is nice because it means pulling this repo fresh is
+# more likely to produce passing tests (since dependency versions won't change).
+# It's possible that this starts to fail, though, if composer starts enforcing
+# the composer version in the lock file (like ruby). If that happens we can
+# switch to having composer lock files per PHP version (like in the ruby repo),
+# or uncomment this line which will cause dependencies to use new versions when
+# they are released.
+# rm -f composer.lock
+
 composer install
 
 cd test
