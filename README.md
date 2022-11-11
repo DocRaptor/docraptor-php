@@ -54,7 +54,7 @@ The majority of the code in this repo is generated using openapi-generator on [d
 3. `script/test`
 4. Increment version in code:
   - `composer.json`
-  - `swagger-config.json`
+  - `generator-config.json`
   - `lib/Configuration.php` (2 places)
 5. Update [CHANGELOG.md](CHANGELOG.md)
 6. Commit "Release version vX.Y.Z"
