@@ -17,7 +17,7 @@ $status_response = $docraptor->createHostedDoc($doc);
 
 $downloaded_document = file_get_contents($status_response->getDownloadUrl());
 
-if (strpos($downloaded_document, "%PDF") != 0) {
+if (strpos($downloaded_document, "%PDF") !== 0) {
   throw new Exception("Output was not a PDF");
 }
 

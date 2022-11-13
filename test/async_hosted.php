@@ -24,7 +24,7 @@ while (true) {
     $bytes_written = fwrite($file, $downloaded_document);
     fclose($file);
     
-    if (strpos($downloaded_document, "%PDF") != 0) {
+    if (strpos($downloaded_document, "%PDF") !== 0) {
       throw new Exception("Output was not a PDF");
     }
     if ($bytes_written < 20000) {

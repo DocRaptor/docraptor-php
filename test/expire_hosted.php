@@ -18,7 +18,7 @@ $download_url = $status_response->getDownloadUrl();
 
 $downloaded_document = file_get_contents($download_url);
 
-if (strpos($downloaded_document, "%PDF") != 0) {
+if (strpos($downloaded_document, "%PDF") !== 0) {
   throw new Exception("Output was not a PDF");
 }
 

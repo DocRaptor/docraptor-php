@@ -29,7 +29,7 @@ $file = fopen($test_output_dir . $test_name . "_php_" . phpversion() . ".pdf", "
 $bytes_written = fwrite($file, $downloaded_document);
 fclose($file);
 
-if (strpos($downloaded_document, "%PDF") != 0) {
+if (strpos($downloaded_document, "%PDF") !== 0) {
   throw new Exception("Output was not a PDF");
 }
 
