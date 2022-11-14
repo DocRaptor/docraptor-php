@@ -52,16 +52,16 @@ The majority of the code in this repo is generated using openapi-generator on [d
 1. Pull latest master
 2. Merge feature branch(es) into master
 3. `script/test`
-4. Increment version in code:
+4. Increment version: `generator-config.json`
+5. Run `script/generate_language` to update generated version numbers:
   - `composer.json`
-  - `generator-config.json`
   - `lib/Configuration.php` (2 places)
-5. Update [CHANGELOG.md](CHANGELOG.md)
-6. Commit "Release version vX.Y.Z"
-7. Push to GitHub
-8. Tag version: `git tag 'vX.Y.Z' && git push --tags` (GitHub packagist integration will tell packagist to release a new version)
-9. Verify update on https://packagist.org/packages/docraptor/docraptor
-10. Refresh documentation on docraptor.com
+6. Update [CHANGELOG.md](CHANGELOG.md)
+7. Commit "Release version vX.Y.Z"
+8. Push to GitHub
+9. Tag version: `git tag 'vX.Y.Z' && git push --tags` (GitHub packagist integration will tell packagist to release a new version)
+10. Verify update on https://packagist.org/packages/docraptor/docraptor
+11. Refresh documentation on docraptor.com
 
 
 ## Version Policy
