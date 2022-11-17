@@ -23,6 +23,8 @@ brew_cask_install() {
 brew_cask_install docker
 brew_install docker
 
+brew_install jq
+
 # Avoid a warning message (vs. --overwrite)
 brew unlink docker && brew link docker
 
