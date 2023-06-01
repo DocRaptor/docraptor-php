@@ -1,0 +1,3 @@
+# Specify mounts in `docker run --volume` format (source:target). Bash
+# expressions will be evaluated.
+# $(pwd)/tmp/cache_${image//:/_}:/app/tmp/cache
