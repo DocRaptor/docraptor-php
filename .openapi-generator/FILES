@@ -3,6 +3,11 @@
 .travis.yml
 README.md
 composer.json
+docs/Api/DocApi.md
+docs/Model/AsyncDoc.md
+docs/Model/Doc.md
+docs/Model/DocStatus.md
+docs/Model/PrinceOptions.md
 lib/ApiException.php
 lib/AsyncDoc.php
 lib/Configuration.php
