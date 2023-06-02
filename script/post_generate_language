@@ -24,9 +24,6 @@ cat composer.json |
   cat > composer.json.tmp
 mv composer.json.tmp composer.json
 
-echo "Removing generated (empty) test files"
-rm -rv test/Api/ test/Model/
-
 if compgen -G "patches/*.patch" > /dev/null; then
   echo "Apply patches to generated code"
   git apply --verbose patches/*.patch
