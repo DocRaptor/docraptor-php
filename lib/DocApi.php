@@ -118,7 +118,7 @@ class DocApi
     /**
      * Operation createAsyncDoc
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -133,7 +133,7 @@ class DocApi
     /**
      * Operation createAsyncDocWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -230,7 +230,7 @@ class DocApi
     /**
      * Operation createAsyncDocAsync
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -248,7 +248,7 @@ class DocApi
     /**
      * Operation createAsyncDocAsyncWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -297,7 +297,7 @@ class DocApi
     /**
      * Create request for operation 'createAsyncDoc'
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -324,12 +324,12 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
+                ['*/*'],
+                ['application/json']
             );
         }
 
@@ -392,7 +392,7 @@ class DocApi
     /**
      * Operation createDoc
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -407,7 +407,7 @@ class DocApi
     /**
      * Operation createDocWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -504,7 +504,7 @@ class DocApi
     /**
      * Operation createDocAsync
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -522,7 +522,7 @@ class DocApi
     /**
      * Operation createDocAsyncWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -571,7 +571,7 @@ class DocApi
     /**
      * Create request for operation 'createDoc'
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -598,12 +598,12 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
+                ['*/*'],
+                ['application/json']
             );
         }
 
@@ -666,7 +666,7 @@ class DocApi
     /**
      * Operation createHostedAsyncDoc
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -681,7 +681,7 @@ class DocApi
     /**
      * Operation createHostedAsyncDocWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \DocRaptor\ApiException on non-2xx response
      * @throws \InvalidArgumentException
@@ -778,7 +778,7 @@ class DocApi
     /**
      * Operation createHostedAsyncDocAsync
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -796,7 +796,7 @@ class DocApi
     /**
      * Operation createHostedAsyncDocAsyncWithHttpInfo
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
@@ -845,7 +845,7 @@ class DocApi
     /**
      * Create request for operation 'createHostedAsyncDoc'
      *
-     * @param  \DocRaptor\Doc $doc The document to be created. (required)
+     * @param  \DocRaptor\Doc $doc (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
@@ -872,12 +872,12 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
+                ['*/*'],
+                ['application/json']
             );
         }
 
@@ -1146,12 +1146,12 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
-                []
+                ['*/*'],
+                ['application/json']
             );
         }
 
@@ -1650,11 +1650,11 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+                ['*/*'],
                 []
             );
         }
@@ -1926,11 +1926,11 @@ class DocApi
 
         if ($multipart) {
             $headers = $this->headerSelector->selectHeadersForMultipart(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+                ['*/*']
             );
         } else {
             $headers = $this->headerSelector->selectHeaders(
-                ['application/json', 'application/xml', 'application/pdf', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'],
+                ['*/*'],
                 []
             );
         }

@@ -86,7 +86,10 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         'javascript' => 'bool',
         'css_dpi' => 'int',
         'profile' => 'string',
-        'pdf_title' => 'string'
+        'pdf_title' => 'string',
+        'iframes' => 'bool',
+        'page_margin' => 'string',
+        'pdf_forms' => 'bool'
     ];
 
     /**
@@ -126,7 +129,10 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         'javascript' => null,
         'css_dpi' => null,
         'profile' => null,
-        'pdf_title' => null
+        'pdf_title' => null,
+        'iframes' => null,
+        'page_margin' => null,
+        'pdf_forms' => null
     ];
 
     /**
@@ -185,7 +191,10 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         'javascript' => 'javascript',
         'css_dpi' => 'css_dpi',
         'profile' => 'profile',
-        'pdf_title' => 'pdf_title'
+        'pdf_title' => 'pdf_title',
+        'iframes' => 'iframes',
+        'page_margin' => 'page_margin',
+        'pdf_forms' => 'pdf_forms'
     ];
 
     /**
@@ -223,7 +232,10 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         'javascript' => 'setJavascript',
         'css_dpi' => 'setCssDpi',
         'profile' => 'setProfile',
-        'pdf_title' => 'setPdfTitle'
+        'pdf_title' => 'setPdfTitle',
+        'iframes' => 'setIframes',
+        'page_margin' => 'setPageMargin',
+        'pdf_forms' => 'setPdfForms'
     ];
 
     /**
@@ -261,7 +273,10 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         'javascript' => 'getJavascript',
         'css_dpi' => 'getCssDpi',
         'profile' => 'getProfile',
-        'pdf_title' => 'getPdfTitle'
+        'pdf_title' => 'getPdfTitle',
+        'iframes' => 'getIframes',
+        'page_margin' => 'getPageMargin',
+        'pdf_forms' => 'getPdfForms'
     ];
 
     /**
@@ -305,9 +320,24 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const KEY_BITS_40 = 40;
+    public const KEY_BITS_128 = 128;
     public const INPUT_HTML = 'html';
     public const INPUT_XML = 'xml';
     public const INPUT_AUTO = 'auto';
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getKeyBitsAllowableValues()
+    {
+        return [
+            self::KEY_BITS_40,
+            self::KEY_BITS_128,
+        ];
+    }
 
     /**
      * Gets allowable values of the enum
@@ -347,7 +377,7 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['http_proxy'] = $data['http_proxy'] ?? null;
         $this->container['http_timeout'] = $data['http_timeout'] ?? null;
         $this->container['insecure'] = $data['insecure'] ?? null;
-        $this->container['media'] = $data['media'] ?? 'print';
+        $this->container['media'] = $data['media'] ?? null;
         $this->container['no_author_style'] = $data['no_author_style'] ?? null;
         $this->container['no_default_style'] = $data['no_default_style'] ?? null;
         $this->container['no_embed_fonts'] = $data['no_embed_fonts'] ?? null;
@@ -362,12 +392,15 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['disallow_annotate'] = $data['disallow_annotate'] ?? null;
         $this->container['disallow_modify'] = $data['disallow_modify'] ?? null;
         $this->container['debug'] = $data['debug'] ?? null;
-        $this->container['input'] = $data['input'] ?? 'html';
+        $this->container['input'] = $data['input'] ?? null;
         $this->container['version'] = $data['version'] ?? null;
         $this->container['javascript'] = $data['javascript'] ?? null;
         $this->container['css_dpi'] = $data['css_dpi'] ?? null;
         $this->container['profile'] = $data['profile'] ?? null;
         $this->container['pdf_title'] = $data['pdf_title'] ?? null;
+        $this->container['iframes'] = $data['iframes'] ?? null;
+        $this->container['page_margin'] = $data['page_margin'] ?? null;
+        $this->container['pdf_forms'] = $data['pdf_forms'] ?? null;
     }
 
     /**
@@ -378,6 +411,15 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     public function listInvalidProperties()
     {
         $invalidProperties = [];
+
+        $allowedValues = $this->getKeyBitsAllowableValues();
+        if (!is_null($this->container['key_bits']) && !in_array($this->container['key_bits'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'key_bits', must be one of '%s'",
+                $this->container['key_bits'],
+                implode("', '", $allowedValues)
+            );
+        }
 
         $allowedValues = $this->getInputAllowableValues();
         if (!is_null($this->container['input']) && !in_array($this->container['input'], $allowedValues, true)) {
@@ -806,6 +848,16 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function setKeyBits($key_bits)
     {
+        $allowedValues = $this->getKeyBitsAllowableValues();
+        if (!is_null($key_bits) && !in_array($key_bits, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'key_bits', must be one of '%s'",
+                    $key_bits,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
         $this->container['key_bits'] = $key_bits;
 
         return $this;
@@ -992,7 +1044,7 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets input
      *
-     * @param string|null $input Specify the input format.
+     * @param string|null $input Specify the input format, defaults to html.
      *
      * @return self
      */
@@ -1017,6 +1069,7 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
      * Gets version
      *
      * @return string|null
+     * @deprecated
      */
     public function getVersion()
     {
@@ -1029,6 +1082,7 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
      * @param string|null $version Deprecated, use the appropriate `pipeline` version. Specify a specific verison of PrinceXML to use.
      *
      * @return self
+     * @deprecated
      */
     public function setVersion($version)
     {
@@ -1129,6 +1183,78 @@ class PrinceOptions implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setPdfTitle($pdf_title)
     {
         $this->container['pdf_title'] = $pdf_title;
+
+        return $this;
+    }
+
+    /**
+     * Gets iframes
+     *
+     * @return bool|null
+     */
+    public function getIframes()
+    {
+        return $this->container['iframes'];
+    }
+
+    /**
+     * Sets iframes
+     *
+     * @param bool|null $iframes Enable loading of iframes.
+     *
+     * @return self
+     */
+    public function setIframes($iframes)
+    {
+        $this->container['iframes'] = $iframes;
+
+        return $this;
+    }
+
+    /**
+     * Gets page_margin
+     *
+     * @return string|null
+     */
+    public function getPageMargin()
+    {
+        return $this->container['page_margin'];
+    }
+
+    /**
+     * Sets page_margin
+     *
+     * @param string|null $page_margin Specify the page margin distance.
+     *
+     * @return self
+     */
+    public function setPageMargin($page_margin)
+    {
+        $this->container['page_margin'] = $page_margin;
+
+        return $this;
+    }
+
+    /**
+     * Gets pdf_forms
+     *
+     * @return bool|null
+     */
+    public function getPdfForms()
+    {
+        return $this->container['pdf_forms'];
+    }
+
+    /**
+     * Sets pdf_forms
+     *
+     * @param bool|null $pdf_forms Make form fields editable by default.
+     *
+     * @return self
+     */
+    public function setPdfForms($pdf_forms)
+    {
+        $this->container['pdf_forms'] = $pdf_forms;
 
         return $this;
     }

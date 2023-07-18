@@ -348,4 +348,31 @@ class PrinceOptionsTest extends TestCase
         // TODO: implement
         $this->markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "iframes"
+     */
+    public function testPropertyIframes()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "page_margin"
+     */
+    public function testPropertyPageMargin()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "pdf_forms"
+     */
+    public function testPropertyPdfForms()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
 }

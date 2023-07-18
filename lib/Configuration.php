@@ -474,7 +474,7 @@ class Configuration
         return [
             [
                 "url" => "https://api.docraptor.com",
-                "description" => "No description provided",
+                "description" => "DocRaptor API endpoint",
             ]
         ];
     }

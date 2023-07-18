@@ -61,7 +61,7 @@ $apiInstance = new DocRaptor\Api\DocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc | The document to be created.
+$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc
 
 try {
     $result = $apiInstance->createAsyncDoc($doc);

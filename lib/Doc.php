@@ -331,9 +331,6 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['document_content'] === null) {
-            $invalidProperties[] = "'document_content' can't be null";
-        }
         $allowedValues = $this->getStrictAllowableValues();
         if (!is_null($this->container['strict']) && !in_array($this->container['strict'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -419,7 +416,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets document_content
      *
-     * @return string
+     * @return string|null
      */
     public function getDocumentContent()
     {
@@ -429,7 +426,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets document_content
      *
-     * @param string $document_content The HTML data to be transformed into a document. You must supply content using document_content or document_url.
+     * @param string|null $document_content The HTML data to be transformed into a document. You must supply content using document_content or document_url.
      *
      * @return self
      */

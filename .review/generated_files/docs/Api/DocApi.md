@@ -42,7 +42,7 @@ $apiInstance = new DocRaptor\Api\DocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc | The document to be created.
+$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc
 
 try {
     $result = $apiInstance->createAsyncDoc($doc);
@@ -56,7 +56,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)| The document to be created. |
+ **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
 
 ### Return type
 
@@ -68,8 +68,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -104,7 +104,7 @@ $apiInstance = new DocRaptor\Api\DocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc | The document to be created.
+$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc
 
 try {
     $result = $apiInstance->createDoc($doc);
@@ -118,7 +118,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)| The document to be created. |
+ **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
 
 ### Return type
 
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -166,7 +166,7 @@ $apiInstance = new DocRaptor\Api\DocApi(
     new GuzzleHttp\Client(),
     $config
 );
-$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc | The document to be created.
+$doc = new \DocRaptor\DocRaptor\Doc(); // \DocRaptor\DocRaptor\Doc
 
 try {
     $result = $apiInstance->createHostedAsyncDoc($doc);
@@ -180,7 +180,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)| The document to be created. |
+ **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
 
 ### Return type
 
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -254,8 +254,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Content-Type**: `application/json`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -378,7 +378,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
@@ -440,7 +440,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: `application/json`, `application/xml`, `application/pdf`, `application/vnd.ms-excel`, `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+- **Accept**: `*/*`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
 [[Back to Model list]](../../README.md#models)
