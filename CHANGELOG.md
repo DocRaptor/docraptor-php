@@ -1,6 +1,6 @@
 ### 4.1.0 [July 18, 2023]
 * Don't require document_content, so document_url can be passed
-* Add API options
+* Add new API options (including prince_options[pdf_forms] to enable PDF forms)
 
 ### 4.0.0 [November 14, 2022]
 * Switch API host to more secure api.docraptor.com (dropping old TLS)
