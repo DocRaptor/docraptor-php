@@ -1,3 +1,6 @@
+### 4.2.0 [March 6, 2024]
+* Add the new userAgentToken API option, to enable passing a key that will be passed back on resource requests
+
 ### 4.1.0 [July 18, 2023]
 * Don't require document_content, so document_url can be passed
 * Add new API options (including prince_options[pdf_forms] to enable PDF forms)
