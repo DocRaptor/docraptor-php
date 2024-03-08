@@ -73,6 +73,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         'callback_url' => 'string',
         'hosted_download_limit' => 'int',
         'hosted_expires_at' => 'string',
+        'user_agent_token' => 'string',
         'prince_options' => '\DocRaptor\PrinceOptions'
     ];
 
@@ -100,6 +101,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         'callback_url' => null,
         'hosted_download_limit' => null,
         'hosted_expires_at' => null,
+        'user_agent_token' => null,
         'prince_options' => null
     ];
 
@@ -146,6 +148,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         'callback_url' => 'callback_url',
         'hosted_download_limit' => 'hosted_download_limit',
         'hosted_expires_at' => 'hosted_expires_at',
+        'user_agent_token' => 'user_agent_token',
         'prince_options' => 'prince_options'
     ];
 
@@ -171,6 +174,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         'callback_url' => 'setCallbackUrl',
         'hosted_download_limit' => 'setHostedDownloadLimit',
         'hosted_expires_at' => 'setHostedExpiresAt',
+        'user_agent_token' => 'setUserAgentToken',
         'prince_options' => 'setPrinceOptions'
     ];
 
@@ -196,6 +200,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         'callback_url' => 'getCallbackUrl',
         'hosted_download_limit' => 'getHostedDownloadLimit',
         'hosted_expires_at' => 'getHostedExpiresAt',
+        'user_agent_token' => 'getUserAgentToken',
         'prince_options' => 'getPrinceOptions'
     ];
 
@@ -304,6 +309,7 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->container['callback_url'] = $data['callback_url'] ?? null;
         $this->container['hosted_download_limit'] = $data['hosted_download_limit'] ?? null;
         $this->container['hosted_expires_at'] = $data['hosted_expires_at'] ?? null;
+        $this->container['user_agent_token'] = $data['user_agent_token'] ?? null;
         $this->container['prince_options'] = $data['prince_options'] ?? null;
     }
 
@@ -755,6 +761,30 @@ class Doc implements ModelInterface, ArrayAccess, \JsonSerializable
     public function setHostedExpiresAt($hosted_expires_at)
     {
         $this->container['hosted_expires_at'] = $hosted_expires_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets user_agent_token
+     *
+     * @return string|null
+     */
+    public function getUserAgentToken()
+    {
+        return $this->container['user_agent_token'];
+    }
+
+    /**
+     * Sets user_agent_token
+     *
+     * @param string|null $user_agent_token A token that will be added to the user agent for all requests made for document content while creating a PDF.
+     *
+     * @return self
+     */
+    public function setUserAgentToken($user_agent_token)
+    {
+        $this->container['user_agent_token'] = $user_agent_token;
 
         return $this;
     }

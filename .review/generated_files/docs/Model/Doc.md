@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **callback_url** | **string** | A URL that will receive a POST request after successfully completing an asynchronous document. The POST data will include download_url and download_id similar to status API responses. WARNING: this only works on asynchronous documents. | [optional]
 **hosted_download_limit** | **int** | The number of times a hosted document can be downloaded.  If no limit is specified, the document will be available for an unlimited number of downloads. | [optional]
 **hosted_expires_at** | **string** | The date and time at which a hosted document will be removed and no longer available. Must be a properly formatted ISO 8601 datetime, like 1981-01-23T08:02:30-05:00. | [optional]
+**user_agent_token** | **string** | A token that will be added to the user agent for all requests made for document content while creating a PDF. | [optional]
 **prince_options** | [**\DocRaptor\DocRaptor\PrinceOptions**](PrinceOptions.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

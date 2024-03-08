@@ -224,6 +224,15 @@ class DocTest extends TestCase
     }
 
     /**
+     * Test attribute "user_agent_token"
+     */
+    public function testPropertyUserAgentToken()
+    {
+        // TODO: implement
+        $this->markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "prince_options"
      */
     public function testPropertyPrinceOptions()
