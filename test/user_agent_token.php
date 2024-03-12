@@ -1,0 +1,39 @@
+<?php
+require __DIR__."/../vendor/autoload.php";
+$test_name = basename(__FILE__, '.php');
+$test_output_dir = dirname(__DIR__) . "/tmp/test_output/";
+
+$docraptor = new DocRaptor\DocApi();
+$docraptor->getConfig()->setUsername("YOUR_API_KEY_HERE");
+// $docraptor->getConfig()->setDebug(true);
+
+// Make a PDF using the user_agent_token parameter, for manual inspection
+$doc = new DocRaptor\Doc();
+$doc->setName("php-" . $test_name . ".pdf");
+$doc->setTest(true);
+$doc->setDocumentType("pdf");
+$doc->setDocumentUrl("https://docraptor-test-harness.herokuapp.com/agent/agent_tester.html");
+$doc->setUserAgentToken("SpecialToken Yay!");
+
+$downloaded_document = $docraptor->createDoc($doc);
+
+$filename = $test_output_dir . $test_name . "_php_" . phpversion() . ".pdf";
+$file = fopen($filename, "wb");
+$bytes_written = fwrite($file, $downloaded_document);
+fclose($file);
+
+if (strpos($downloaded_document, "%PDF") !== 0) {
+  throw new Exception("Output was not a PDF");
+}
+
+if ($bytes_written < 20000) {
+  throw new Exception("PDF is smaller than 20k, which often means it is blank");
+}
+
+$command = "pdftotext " . $filename . " -";
+
+$output = shell_exec($command);
+
+if(!str_contains($output, "SpecialToken Yay!")) {
+  throw new Exception("output should have contained iframe content: " . $output);
+}
