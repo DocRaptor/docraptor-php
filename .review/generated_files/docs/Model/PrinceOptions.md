@@ -1,4 +1,4 @@
-# # PrinceOptions
+# PrinceOptions
 
 ## Properties
 

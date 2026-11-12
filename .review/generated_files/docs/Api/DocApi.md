@@ -1,16 +1,18 @@
 # DocRaptor\DocApi
 
-All URIs are relative to https://api.docraptor.com.
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**createAsyncDoc()**](DocApi.md#createAsyncDoc) | **POST** /async_docs | 
-[**createDoc()**](DocApi.md#createDoc) | **POST** /docs | 
-[**createHostedAsyncDoc()**](DocApi.md#createHostedAsyncDoc) | **POST** /hosted_async_docs | 
-[**createHostedDoc()**](DocApi.md#createHostedDoc) | **POST** /hosted_docs | 
-[**expire()**](DocApi.md#expire) | **PATCH** /expire/{id} | 
-[**getAsyncDoc()**](DocApi.md#getAsyncDoc) | **GET** /download/{id} | 
-[**getAsyncDocStatus()**](DocApi.md#getAsyncDocStatus) | **GET** /status/{id} | 
+
+All URIs are relative to https://api.docraptor.com, except if the operation defines another base path.
+
+| Method | HTTP request | Description |
+| ------------- | ------------- | ------------- |
+| [**createAsyncDoc()**](DocApi.md#createAsyncDoc) | **POST** /async_docs |  |
+| [**createDoc()**](DocApi.md#createDoc) | **POST** /docs |  |
+| [**createHostedAsyncDoc()**](DocApi.md#createHostedAsyncDoc) | **POST** /hosted_async_docs |  |
+| [**createHostedDoc()**](DocApi.md#createHostedDoc) | **POST** /hosted_docs |  |
+| [**expire()**](DocApi.md#expire) | **PATCH** /expire/{id} |  |
+| [**getAsyncDoc()**](DocApi.md#getAsyncDoc) | **GET** /download/{id} |  |
+| [**getAsyncDocStatus()**](DocApi.md#getAsyncDocStatus) | **GET** /status/{id} |  |
 
 
 ## `createAsyncDoc()`
@@ -54,9 +56,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  | |
 
 ### Return type
 
@@ -116,9 +118,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  | |
 
 ### Return type
 
@@ -178,9 +180,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)|  | |
 
 ### Return type
 
@@ -240,9 +242,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)| The document to be created. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **doc** | [**\DocRaptor\DocRaptor\Doc**](../Model/Doc.md)| The document to be created. | |
 
 ### Return type
 
@@ -301,9 +303,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The download_id returned from status request or hosted document response. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| The download_id returned from status request or hosted document response. | |
 
 ### Return type
 
@@ -363,9 +365,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The download_id returned from an async status request or callback. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| The download_id returned from an async status request or callback. | |
 
 ### Return type
 
@@ -425,9 +427,9 @@ try {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The status_id returned when creating an asynchronous document. |
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **id** | **string**| The status_id returned when creating an asynchronous document. | |
 
 ### Return type
 

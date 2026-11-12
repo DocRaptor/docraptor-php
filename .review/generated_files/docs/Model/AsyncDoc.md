@@ -1,4 +1,4 @@
-# # AsyncDoc
+# AsyncDoc
 
 ## Properties
 

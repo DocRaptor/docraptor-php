@@ -14,6 +14,7 @@ lib/Configuration.php
 lib/Doc.php
 lib/DocApi.php
 lib/DocStatus.php
+lib/FormDataProcessor.php
 lib/HeaderSelector.php
 lib/ModelInterface.php
 lib/ObjectSerializer.php

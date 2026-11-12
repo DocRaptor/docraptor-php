@@ -1,4 +1,4 @@
-# # DocStatus
+# DocStatus
 
 ## Properties
 
